@@ -12,21 +12,11 @@
               <li>
                 <a href="catalog.html">Каталог</a>
                   <ul>
-                    <li>
-                      <a class="site-navigation-news" href="#">Новинки</a>
-                    </li>
-                    <li>
-                      <a href="catalog.html">Сливочное</a>
-                    </li>
-                    <li>
-                      <a href="#">Щербеты</a>
-                    </li>
-                    <li>
-                      <a href="#">Фруктовый лед</a>
-                    </li>
-                    <li>
-                      <a href="#">Мелорин</a>
-                    </li>
+					  <li><a class="site-navigation-news" href="#">Новинки</a></li>
+                    <li><a href="catalog.html">Сливочное</a></li>
+                    <li><a href="#">Щербеты</a></li>
+                    <li><a href="#">Фруктовый лед</a></li>
+                    <li><a href="#">Мелорин</a></li>
                   </ul>
                 </li>
               <li><a href="#">Доставка и отплата</a></li>
@@ -43,7 +33,37 @@
     </header>
     <main class="container">
       <h1 class="visually-hidden">Магазин по продаже мороженого Глейси</h1>
-        <!--Два рожка,их описание,плюс цвет боди будет переключающимся фоном-->
+		<section class="slider">
+			<h2 class="visually-hidden">Промофото магазина мороженого Глейси</h2><!--по аналогии с подвалом в майне в каждую секцию сделала скрытый заголовок-->
+                <input type="radio" id="btn-1" name="slider" checked>
+                <input type="radio" id="btn-2" name="slider">
+                <input type="radio" id="btn-3" name="slider">
+                <div class="slider-controls">
+                    <label for="btn-1">Слайд 1</label>
+                    <label for="btn-2">Слайд 2</label>
+                    <label for="btn-3">Слайд 3</label>
+                </div>
+                <div class="slider-inner">
+                    <div class="slider-slides">
+                        <div class="slide-1">
+							<img src="#" alt="Фотография мороженого крем-брюле и пломбира с малиновым джемом">
+						    <p>Крем-брюле и пломбир<br>с малиновым джемом</p>
+							<a class="slider-button" href="#">Давайте оба!</a>
+                         </div>
+                        <div class="slide-2">
+							<img src="#" alt="Фотография мороженого крем-брюле и пломбира с малиновым джемом">
+						    <p>Шоколадный пломбир<br>и лимонный сорбет</p>
+							<a class="slider-button" href="#">Давайте оба!</a>
+                         </div>
+                        <div class="slide-3">
+							<img src="#" alt="Фотография мороженого пломбир с помадкой и клубничного щербета">
+						    <p>Пломбир с помадкой<br>и клубничный щербет</p>
+							<a class="slider-button" href="#">Давайте оба!</a>
+                         </div>
+                    </div>
+                </div>
+            </section>
+        <!--будет переключающийся фон-->
       <section class="promo">
 		  <h2 class="visually-hidden">Промоакции магазина мороженого Глейси</h2><!--по аналогии с подвалом в майне в каждую секцию сделала скрытый заголовок-->
           <div class="promo-item">
@@ -90,8 +110,16 @@
 			  </li>
 		  </ul>
       </section>
-      <section class="seo">
-      </section>
+      <section class="features">
+          <h2 class="visually-hidden">Наши преимущества</h2>
+          <b>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</b><!--или заголовок 3 уровня-->
+          <ul class="features-list">
+            <li class="features-item">Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</li>
+            <li class="features-item">Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</li>
+            <li class="features-item">Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</li>
+            <li class="features-item">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
+          </ul>
+        </section>
       <section class="news">
            <article class="blog-news">
            </article>
