@@ -7,12 +7,12 @@
   <body>
     <header class="main-header">
       <nav class="main-navigation">
-          <img src="img/index-logo.svg" width="50" height="50" alt="Логотип магазина Глейси">
+          <a class="gllacy-logo"><img src="img/logo.svg" width="154" height="64" alt="Логотип магазина Глейси"></a>
             <ul class="site-navigation">
               <li>
                 <a href="catalog.html">Каталог</a>
                   <ul>
-					  <li><a class="site-navigation-news" href="#">Новинки</a></li>
+				    <li><a class="site-navigation-news" href="#">Новинки</a></li>
                     <li><a href="catalog.html">Сливочное</a></li>
                     <li><a href="#">Щербеты</a></li>
                     <li><a href="#">Фруктовый лед</a></li>
@@ -77,37 +77,33 @@
             <a class="button" href="#">Хочу шоколадки!</a>
           </div>
       </section>
-      <section class="hits">
+      <section class="products-line">
 	    <h2 class="visually-hidden">Хиты магазина мороженого Глейси</h2>
-		  <ul class="hit-list">
-			  <li><h3><a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
-				<p class="hit-list-image">
-                <img src="#" width="200" height="200" alt="Фото сливочного мороженого с апельсиновым джемом и цитрусовой стружкой">
-                </p>
-              <p class="hit-list-price">310 ₽<span class="kg">/кг</span></p>
-              <span class="button quick-view">Быстрый просмотр</span>
-			  </li>
-			  <li><h3><a href="#">Сливочно-кофейное с кусочками шоколада</a></h3>
-				<p class="hit-list-image">
-                <img src="#" width="200" height="200" alt="Фото сливочно-кофейного мороженого с кусочками шоколада">
-                </p>
-              <p class="hit-list-price">380 ₽<span class="kg">/кг</span></p>
-              <span class="button quick-view">Быстрый просмотр</span>
-			  </li>
-			  <li><h3><a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a></h3>
-				<p class="hit-list-image">
-                <img src="#" width="200" height="200" alt="Фото сливочно-клубничного мороженого с присыпкой из белого шоколада">
-                </p>
-              <p class="hit-list-price">355 ₽<span class="kg">/кг</span></p>
-              <span class="button quick-view">Быстрый просмотр</span>
-			  </li>
-			  <li><h3><a href="#">Сливочное крем-брюле с карамельной подливкой</a></h3>
-				<p class="hit-list-image">
-                <img src="#" width="200" height="200" alt="Фото сливочное мороженого крем-брюле с карамельной подливкой">
-                </p>
-              <p class="hit-list-price">415 ₽<span class="kg">/кг</span></p>
-              <span class="button quick-view">Быстрый просмотр</span>
-			  </li>
+		  <ul class="products-line-list">
+		    <li>
+              <img src="img/product1-1.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+              <h3><a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
+              <p class="products-line-price">310 ₽<span class="weight">/кг</span></p>
+              <a class="product quick-view" href="#">Быстрый просмотр</a>
+            </li>
+            <li>
+              <img src="img/product2-1.jpg" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
+              <h3><a href="#">Сливочно-кофейное с кусочками шоколада</a></h3>
+              <p class="products-line-price">380 ₽<span class="weight">/кг</span></p>
+              <a class="product quick-view" href="#">Быстрый просмотр</a>
+            </li>
+            <li>
+              <img src="img/product3-1.jpg" width="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+              <h3><a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a></h3>
+              <p class="products-line-price">355 ₽<span class="weight">/кг</span></p>
+              <a class="product quick-view" href="#">Быстрый просмотр</a>
+            </li>
+            <li>
+              <img src="img/product4-1.jpg" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
+              <h3><a href="#">Сливочное крем-брюле с карамельной подливкой</a></h3>
+              <p class="products-line-price">415 ₽<span class="weight">/кг</span></p>
+              <a class="product quick-view" href="#">Быстрый просмотр</a>
+            </li>
 		  </ul>
       </section>
       <section class="features">
@@ -120,23 +116,21 @@
             <li class="features-item">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
           </ul>
         </section>
-      <section class="news">
-           <article class="blog-news">
+        <section class="blog-news">
 			   <h3>Новое в нашем блоге</h3>
 			   <a href="#">10 способов сервировки фруктовых щербетов к столу</a>
-           </article>
-           <article class="subscribe-form">
+        </section>
+        <section class="subscribe-form">
 			    <h3 class="visually-hidden">Подписка на рассылку магазина мороженого Глейси</h3>
 			   <form class="subscribe" action="#" method="post">
                <label for="subscribe">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =) </label>
                <input type="email" name="email" id="subscribe" placeholder="Электронная почта">
                <button class="button" type="submit">Отправить</button> <!-- поставила фразу с предложением подписки как подпись к форме-->
                </form>
-           </article>
-       </section>
+        </section>
 		<section class="contacts">
          <h3 class="visually-hidden">Как нас найти</h3>
-         <img class="map" src="#" width="1200" height="500" alt="Адрес главного офиса: ул. Большая Конюшенная 19/8, Санкт-Петербург">
+         <img class="map" src="img/map.jpg" width="1200" height="430" alt="Адрес главного офиса: ул. Большая Конюшенная 19/8, Санкт-Петербург">
          <div class="head-office">
            <p>Адрес главного офиса<br>и офлайн-магазина:<b>ул. Большая Конюшенная 19/8, Санкт-Петербург</b></p>
            <p>Для заказов по телефону:<b>8 812 450-25-25</b>(с 10 до 20 ежедневно)</p>
@@ -156,7 +150,7 @@
         </section>
         <section class="info">
           <h3 class="visually-hidden">Блок с информацией</h3>
-          <span class="heart"><img src="#" width="10" height="10" alt="Сердце">
+          <span class="heart"><img src="#" width="15" height="13" alt="Сердце">
           </span><!-- Сердце решить куда его деть-->
           <ul class="info-link">
             <li><a href="#" class="info-link link partners">Для поставщиков</a></li>
@@ -167,8 +161,8 @@
          </section>
          <section class="copyright">
            <h3 class="visually-hidden">Копирайт</h3>
-           <img src="img/htmlacademy-logo.svg" width="30" height="20" alt="Логотип HTML Академии">
-           <span class="copyright-info">Сделано в HTML Academy © 2017</span><!--можно поставить ссылку на сайт Академии-->
+           <a class="htmlacademy-logo" href="https://htmlacademy.ru/intensive/htmlcss" ><img src="img/logo-htmlacademy.svg" width="108" height="39" alt="Логотип HTML Академии"></a>
+           <span class="htmlacademy-logo">Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a> © 2017</span>
          </section>
     </footer>
 	  <!--смущает каскад, некрасивый, смущает выбор уровней заголовков, наверное придется добавлять некоторым элементам классы-->
