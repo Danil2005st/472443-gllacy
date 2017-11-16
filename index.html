@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
@@ -12,7 +14,7 @@
           <ul class="site-navigation">
             <li>
               <a href="catalog.html">Каталог</a>
-                <ul>
+                <ul class="submenu">
 				  <li><a class="site-navigation-news" href="catalog.html">Новинки</a></li>
                   <li><a href="catalog.html">Сливочное</a></li>
                   <li><a href="catalog.html">Щербеты</a></li>
@@ -21,19 +23,17 @@
                 </ul>
             </li>
               <li><a href="catalog.html">Доставка и отплата</a></li>
-              <li><a href="#infoabout">О Компании</a></li><!--включить что-ли якорь на отдел в подвале о компании-->
+              <li><a href="#">О Компании</a></li>
           </ul>
       </nav>
       <div class="form-wrapper"><!--как-то переназвать-->
         <form class="user-search" method="post" action="https://echo.htmlacademy.ru">
-        <label>
-          <span class="visually-hidden">Пожалуйста, укажите, что будем искать</span>
-          <input type="search" name="search" placeholder="Что ищем">
-        </label>
-          <button type="submit"><img src="img/loupe.svg" width="17" height="17" alt="Найти"></button>
+          <input id="searchbox" type="search" name="search" placeholder="Что ищем">
+          <label class="visually-hidden">Пожалуйста, укажите, что будем искать</label>
+          <a class="searchbutton" href="#"><img src="img/loupe.svg" width="17" height="17" alt="Найти"></a>
         </form>
        <!-- <button type="button" class="entrance"><img src="img/entrance.svg" width="21" height="19" alt="Вход"><span>Вход</span></button> изначальный вариант у меня был такой-->
-        <a class="entance" href="#"><img src="img/entrance.svg" width="21" height="19" alt="Вход"><span>Вход</span></button></a>
+        <a class="entance" href="#"><img src="img/entrance.svg" width="21" height="19" alt="Вход"><span class="entancespan">Вход</span></a>
         <form class="user" method="post" action="https://echo.htmlacademy.ru">
           <p>
             <input id="user-email" type="text" name="e-mail" placeholder="Электронная почта">
@@ -49,10 +49,11 @@
               <a href="#">Новая регистрация</a>
           </p>
          </form>
-         <button type="button" class="emptybasket"><img src="img/basket.svg" width="21" height="20" alt="Пустая корзина"><span>Пусто</span></button>
+         <button type="button" class="emptybasket"><img src="img/basket.svg" width="21" height="20" alt="Пустая корзина"><span class="basketspan">Пусто</span></button>
       </div>
-      <p>С 10 до 20 ежедневно<br><a href="tel:8-812-450-25-25">8 812 450-25-25</a></p>
-        <!--Добавила ссылку автонабора телефона, также можно использовать вариант тег b-->
+      <div class="contact">
+        <p>С 10 до 20 ежедневно<br><a class="phone" href="tel:8-812-450-25-25">8 812 450-25-25</a></p>
+      </div><!--Добавила ссылку автонабора телефона, также можно использовать вариант тег b-->
     </header>
     <main class="container">
       <h1 class="visually-hidden">Магазин по продаже мороженого Глейси</h1>
@@ -133,10 +134,10 @@
           <h2 class="visually-hidden">Наши преимущества</h2>
           <b>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</b>
           <ul class="features-list">
-            <li class="features-item">Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</li>
-            <li class="features-item">Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</li>
-            <li class="features-item">Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</li>
-            <li class="features-item">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
+            <li class="features-item"><img src="img/ice-cream.svg" width="49" height="49" alt="Мороженое">Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</li>
+            <li class="features-item"><img src="img/eco.svg" width="49" height="49" alt="Листок">Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</li>
+            <li class="features-item"><img src="img/cow.svg" width="49" height="49" alt="Корова">Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</li>
+            <li class="features-item"><img src="img/thermometer.svg" width="49" height="49" alt="Термометр">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
           </ul>
         </section>
         <section class="blog-news">
@@ -145,7 +146,7 @@
         </section>
         <section class="subscribe-form">
 			   <h3 class="visually-hidden">Подписка на рассылку магазина мороженого Глейси</h3>
-			   <form class="subscribe" action="https://echo.htmlacademy.ru" method="post">
+			   <form class="subscribe-form" action="https://echo.htmlacademy.ru" method="post">
                <p>
                  <label for="subscribe">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</label>
                </p>
@@ -197,7 +198,7 @@
           <li><a href="#" class="social social-vk">В контакте</a></li>
           </ul>
         </section>
-        <section class="info" id="infoabout">
+        <section class="info">
           <h3 class="visually-hidden">Блок с информацией</h3>
           <span class="heart"><img src="img/heart.svg" width="15" height="13" alt="Сердце">
           </span><!-- Сердце решить куда его деть-->

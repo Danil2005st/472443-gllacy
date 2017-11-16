@@ -1,3 +1,83 @@
-body {
-  background-color: rebeccapurple;
+body  {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Tahoma", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: rgb(132,157,143);
+  background-position: center top;
+  background-repeat: no-repeat;
 }
+
+a  {
+  text-decoration: none;
+  color: #ffffff;/*убрала цвет и подчеркивание ссылок*/
+}
+
+.site-navigation,
+.submenu,
+.products-line-list,
+.features-list,
+.social,
+.info-link  {
+  list-style: none;/*убрала точки со списков*/
+}
+
+.site-navigation>li>a  {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #ffffff;/*шрифт меню*/
+}
+
+
+.contact p,
+.submenu a,
+.basketspan,
+.entancespan  {
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+  /*размер текста входа, корзины, время работы и подменю*/
+}
+
+.submenu a  {
+  color: #323232;
+}
+
+.submenu li:first-child  {
+  font-weight: bold; /*цвет текста подменю и жирность новинок*/
+}
+
+
+.user-search input,
+.user input  {
+  font-size: 14px;
+  line-height: 24px;
+  color:#999999;
+} /* размер текста и цвет в формах (плейсхолдеры*/
+
+
+.user a {
+  font-size: 13px;
+  line-height: 24px;
+  color: #323232; /*ссылки забыли пароль и новая регистрация*/
+}
+
+.user button  {
+  font-size: 18px;
+  line-height: 24px;
+  color: #ffffff;
+  font-weight: bold; /*кнопка войти*/
+}
+
+.phone  {
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+/* шапка без заполеннной корзины*/
+
