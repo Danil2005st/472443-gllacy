@@ -66,7 +66,8 @@ a  {
   color: #323232; /*ссылки забыли пароль и новая регистрация*/
 }
 
-.user button  {
+.user button,
+.basket-popup button  {
   font-size: 18px;
   line-height: 24px;
   color: #ffffff;
@@ -76,8 +77,93 @@ a  {
 .phone  {
   font-size: 22px;
   line-height: 24px;
-  font-weight: bold;
+  font-weight: bold; /*телефон*/
 }
 
-/* шапка без заполеннной корзины*/
+
+
+/*.site-navigation > li {
+    position: relative;
+} заготовка выпадашки подменю*/
+
+
+.site-navigation a:hover  {
+  padding: 5px;
+  background-color: #ffffff;
+  color: #323232;
+  border-radius: 12px;/*наведение главное меню*/
+}
+
+
+/*.submenu  {
+  position: absolute;
+  display: none;
+  left: 100px;
+  width:
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #ffffff;
+}
+
+.site-navigation > li:hover .submenu {
+    display: block;
+} /*заготовка выпадашки подменю менять данные падингов и позиционирования*/
+
+
+.submenu a:visited  {
+  background-color: #d07058; /*бекграунт находимся на странице подменю*/
+}
+
+.submenu a:hover  {
+  background-color: #fbded7;
+  border-radius: 0px;/*бекграунт наведения подменю*/
+}
+
+.submenu a:focus  {
+  background-color: #f6b5a5;
+  /*бекграунт нажатия подменю*/
+}
+
+/*.user-search a {
+  position: relative;
+}
+
+.user-search input {
+  position: absolute;
+  display: none;
+}
+
+.user-search a: hover .user-search input {
+  display: block;
+} выпадание поиска не работает */
+
+.basket a  {
+  font-size: 14px;
+  line-height: 16px;
+  color: #323232; /*корзина с товарами шрифт*/
+}
+
+.basket-item  {
+  font-size: 13px;
+  line-height: 24px;
+  color: #323232;
+}
+
+
+.basket-item span  {
+  color:#999999; /*переопределяю цвет последней графы указала такой же как у плейсхолдеров*/
+}
+
+
+.basket-popup p {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #323232; /* размер итого */
+}
+
+
+
+/* шапка */
 
