@@ -21,7 +21,9 @@ a  {
 .products-line-list,
 .features-list,
 .social,
-.info-link  {
+.info-link,
+.breadcrumbs,
+.pagination-list  {
   list-style: none;/*убрала точки со списков*/
 }
 
@@ -43,12 +45,22 @@ a  {
   /*размер текста входа, корзины, время работы и подменю*/
 }
 
-.submenu a  {
-  color: #323232;
+.submenu a,
+.user a,
+.basket a,
+.basket-item,
+.basket-popup p,
+.features-item,
+.features b,
+.blog-news a,
+.blog-news h3,
+.head-office p,
+.feedbackform b {
+  color: #323232; /*общие цвета для разных элементов*/
 }
 
 .submenu li:first-child  {
-  font-weight: bold; /*цвет текста подменю и жирность новинок*/
+  font-weight: bold; /* жирность новинок*/
 }
 
 
@@ -62,29 +74,16 @@ a  {
 
 .user a {
   font-size: 13px;
-  line-height: 24px;
-  color: #323232; /*ссылки забыли пароль и новая регистрация*/
+  line-height: 24px; /*ссылки забыли пароль и новая регистрация*/
 }
 
-.user button,
-.basket-popup button  {
-  font-size: 18px;
-  line-height: 24px;
-  color: #ffffff;
-  font-weight: bold; /*кнопка войти*/
-}
+
 
 .phone  {
   font-size: 22px;
   line-height: 24px;
   font-weight: bold; /*телефон*/
 }
-
-
-
-/*.site-navigation > li {
-    position: relative;
-} заготовка выпадашки подменю*/
 
 
 .site-navigation a:hover  {
@@ -94,6 +93,25 @@ a  {
   border-radius: 12px;/*наведение главное меню*/
 }
 
+.site-navigation a:focus  {
+  background-color: rgba(248, 247, 244, 0.988);
+  box-shadow: inset 0px 2px 1px 0px rgba(105, 105, 105, 0.004);
+  border-radius: 12px;
+  padding: 5px;
+}/*бекграунт нажатия меню НЕ РАБОТАЕТ*/
+
+/*.site-navigation .active-navigation a  {
+  background-color: #d07058;
+}/*бекграунт находимся на странице меню но получаются тогда все пункты подменю как активные*/
+
+
+
+
+
+
+/*.site-navigation > li {
+    position: relative;
+} заготовка выпадашки подменю это работает*/
 
 /*.submenu  {
   position: absolute;
@@ -108,49 +126,23 @@ a  {
 
 .site-navigation > li:hover .submenu {
     display: block;
-} /*заготовка выпадашки подменю менять данные падингов и позиционирования*/
+} /*заготовка выпадашки подменю менять данные падингов и позиционирования это работает*/
 
-.submenu a {
-  background-color: #ffffff;
-}
 
-.submenu a:visited  {
-  background-color: #d07058; /*бекграунт находимся на странице подменю*/
-}
 
-.submenu a:hover  {
-  background-color: #fbded7;
-  border-radius: 0px;/*бекграунт наведения подменю*/
-}
-
-.submenu a:focus  {
-  background-color: #f6b5a5;
-  /*бекграунт нажатия подменю*/
-}
-
-/*.user-search a {
-  position: relative;
-}
-
-.user-search input {
-  position: absolute;
-  display: none;
-}
-
-.user-search a: hover .user-search input {
-  display: block;
-} выпадание поиска не работает */
-
-.basket a  {
+.basket a,
+.breadcrumbs,
+.sort-type legend,
+.range-type p,
+.fatness-type legend,
+.filler-type legend  {
   font-size: 14px;
-  line-height: 16px;
-  color: #323232; /*корзина с товарами шрифт*/
+  line-height: 16px; /*корзина с товарами шрифт*/
 }
 
 .basket-item  {
   font-size: 13px;
   line-height: 24px;
-  color: #323232;
 }
 
 
@@ -162,13 +154,69 @@ a  {
 .basket-popup p  {
   font-size: 15px;
   line-height: 18px;
-  font-weight: bold;
-  color: #323232; /* размер итого */
+  font-weight: bold; /* размер итого */
 }
 
 
+.user button,
+.promo-item a,
+.products-line-list button,
+.subscribe-gllacy button,
+.head-office a,
+.feedback-button,
+.entrance-button,
+.order-button  {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  background-image: linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
+  opacity: 0.988;
+   /*кнопки*/
+}
 
-/* шапка */
+.user button,
+.products-line-list button,
+.subscribe-gllacy button,
+.feedback-button,
+.order-button {
+  border:  none;
+  text-align: center;
+  vertical-align: middle;
+  border-color: rgb(231,74,53);
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+
+.order-button,
+.user button,
+.subscribe-gllacy button,
+.feedback-button,
+.order-button,
+.products-line-list button,
+.type button  {
+  color: #ffffff;
+}
+
+.promo-item a,
+.subscribe-gllacy button,
+.head-office a,
+.feedback-button,
+.slider-button   {
+  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64); /* тени от кнопок */
+}
+
+.entrance-button,
+.products-line-list button,
+.basket-popup button {
+  box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 0.004);
+}
+
+
+/* шапка и некоторые общие элементы */
+
+
+
 .slider-slides p  {
   font-size: 60px;
   line-height: 60.35px;
@@ -180,10 +228,12 @@ a  {
   line-height: 44px;
   font-weight: bold;
   background-image: linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
   border-radius: 30px;
   text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76); /*кнопка слайдера*/
 }
+
+
+
 
 
 .promo-item h3  {
@@ -199,40 +249,6 @@ a  {
   font-weight: bold;
 } /*тест промо*/
 
-
-.promo-item a,
-.products-line-list button,
-.subscribe-gllacy button,
-.head-office a,
-.feedback-button  {
-  font-size: 18px;
-  line-height: 24px;
-  font-weight: bold;
-  background-image: linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  opacity: 0.988;
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64); /*кнопка давайте оба*/
-}
-
-.promo-item  {
-  background-image: url(C:\Users\Anna\Documents\GitHub\472443-gllacy\img\rastberry.jpg);
-}
-
-.subscribe-gllacy button,
-.feedback-button  {
-  color: #ffffff;
-}
-
-.head-office a
-
-.user button  {
-  background-image: linear-gradient( 90deg, rgb(231,74,53) 0%, rgb(242,104,67) 100%);
-  box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 0.004); /* кнока войти*/
-}
-
-.products-line-list button  {
-  box-shadow: 0px 1px 2px 0px rgba(172, 16, 0, 0.004);
-  color: #ffffff;
-}
 
 .products-line-price  {
   font-size: 45px;
@@ -251,26 +267,19 @@ a  {
 .features b,
 .blog-news a  {
   font-size: 24px;
-  line-height: 30px;
-  color: #323232;/*преимущества жирный текст и новое в ганем блоге*/
+  line-height: 30px; /*преимущества жирный текст и новое в нашем блоге*/
 }
 
-.features-item {
-  color: #323232;
-}
 
 .blog-news a  {
   font-weight: bold;
-  color: #323232;
 }
 
-.blog-news h3  {
-  color: #323232;
-}
 
 .subscribe-gllacy label  {
   color: #5a5a5a;/*подпишитесь на рассылку*/
 }
+
 
  .subscribe-gllacy input,
 .feedbackform input,
@@ -283,25 +292,44 @@ a  {
 
 .head-office p  {
   font-size: 14px;
-  line-height: 20px;
-  color: #323232;  /* адрес главного офиса текст */
+  line-height: 20px;  /* адрес главного офиса текст */
 }
 
- .head-office b  {
+.head-office b  {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-/*.info-link .link  {
+.current-item  {
+  font-size: 35px;
+  line-height: 41px;
+  font-weight: bold; /*сливочное мороженое*/
+}
+
+
+.fatness-type label,
+.filler-type label,
+.type button,
+.pagination-list  {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+
+/*мэйн*/
+
+
+
+.info-link .link  {
   font-size: 13px;
   line-height: 18px;
 }
 
-.info-link .link .partners {
+.info-link li:first-child {
   font-weight: bold;
 }
-*/
+
 
 .htmlacademy-logo {
   font-size: 12px;
@@ -315,4 +343,63 @@ a  {
 }
 
 
+/*подвал*/
+
+
+
+
+
+
+
+
+
+.submenu a {
+  background-color: #ffffff;
+}
+
+.submenu .active a  {
+  background-color: #d07058; /*бекграунт находимся на странице подменюб вышла из положения так, так как находится мы можем только на странице сливочное то класс экьтив добавила ей и стилизовала*/
+}
+
+.submenu a:hover  {
+  background-color: #fbded7;
+  border-radius: 0px; /*бекграунт наведения подменю*/
+}
+
+.submenu a:focus  {
+  background-color: #f6b5a5;
+  border-radius: 0px;
+}
+ /*бекграунт нажатия подменю*/
+
+
+/*.searchbutton {
+  position: relative;
+}
+
+.searchbox {
+  display: none;
+}
+
+.searchbutton:hover .searchbox{
+  display: block;
+} выпадание поиска не работает, выносила ссылку за форму, все равно не работает
+
+
+
+
+/*slider-slides a:hover  {
+  background-color: ;
+}бекграунт нажатия   background-color: ;
+
+бекграунт наведения кнопки слайдера
+
+
+
+slider-slides a:focus {
+  background-color: ;
+  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
+}
+
+*/
 
