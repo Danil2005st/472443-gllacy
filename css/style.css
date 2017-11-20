@@ -86,32 +86,57 @@ a  {
 }
 
 
-.site-navigation a:hover  {
-  padding: 5px;
-  background-color: #ffffff;
-  color: #323232;
-  border-radius: 12px;/*наведение главное меню*/
-}
-
-.site-navigation a:focus  {
+.site-navigation a:active  {
   background-color: rgba(248, 247, 244, 0.988);
   box-shadow: inset 0px 2px 1px 0px rgba(105, 105, 105, 0.004);
   border-radius: 12px;
   padding: 5px;
-}/*бекграунт нажатия меню НЕ РАБОТАЕТ*/
+}/*бекграунт нажатия меню НЕ РАБОТАЕТ а может я не вижу тени внутри кнопки*/
 
-/*.site-navigation .active-navigation a  {
+.site-navigation a:hover  {
+  background-color: #ffffff;
+  color: #323232;
+  border-radius: 12px;
+  padding: 5px;/*наведение главное меню*/
+}
+
+
+
+.site-navigation .active-navigation a {
   background-color: #d07058;
-}/*бекграунт находимся на странице меню но получаются тогда все пункты подменю как активные*/
+  border-radius: 12px;
+  padding: 5px;
+}/*бекграунт находимся на странице меню но получаются тогда все пункты подменю как активные по идее это так и есть но не могу избавится от бордер радиуса применяла отрицательный селектор и другое но не получается*/
 
 
+.submenu a {
+  background-color: #ffffff;
+}
+
+
+.submenu .active a  {
+  background-color: #d07058;
+  border-radius: 0px;/*бекграунт находимся на странице подменюб вышла из положения так, так как находится мы можем только на странице сливочное то класс эктив добавила ей и стилизовала и только у нее избавилась от бордер радиуса*/
+}
+
+
+.submenu a:hover  {
+  background-color: #fbded7;
+  border-radius: 0px; /*бекграунт наведения подменю*/
+}
+
+.submenu a:focus  {
+  background-color: #f6b5a5;
+  border-radius: 0px;
+}
+ /*бекграунт нажатия подменю*/
 
 
 
 
 /*.site-navigation > li {
     position: relative;
-} заготовка выпадашки подменю это работает*/
+} заготовка выпадашки подменю это работает пока закомменттировала для удобства*/
 
 /*.submenu  {
   position: absolute;
@@ -159,7 +184,8 @@ a  {
 
 
 .user button,
-.promo-item a,
+.promo-item-1 a,
+.promo-item-2 a,
 .products-line-list button,
 .subscribe-gllacy button,
 .head-office a,
@@ -198,7 +224,8 @@ a  {
   color: #ffffff;
 }
 
-.promo-item a,
+.promo-item-1 a,
+.promo-item-2 a,
 .subscribe-gllacy button,
 .head-office a,
 .feedback-button,
@@ -232,16 +259,41 @@ a  {
   text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76); /*кнопка слайдера*/
 }
 
+.slider-slides a:hover  {
+  color: #ffffff;
+  background-image:
+    linear-gradient( to top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%),
+    linear-gradient( to top, rgb(231, 74, 53) 0%, rgb(242, 104, 67) 100%);
+}/*бекграунт наведения кнопки слайдера*/
+
+.slider-slides a:active {
+  background-image: linear-gradient( to top, rgb(242, 104, 67) 0%, rgb(231, 74, 53) 100%);
+  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
+}
+ /*нажатие кнопки слайдера не работает или не вижу тени внутри*/
 
 
-
-
-.promo-item h3  {
+.promo-item-1 h3,
+.promo-item-2 h3  {
   font-size: 35px;
   line-height: 41px;
   font-weight: bold; /*заголовки промо малинка даром*/
 }
 
+.promo-item-1  {
+  background-color: #b73b60;
+  background-image: url("../img/rastberry.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+
+.promo-item-2  {
+  background-color: #421e0b;
+  background-image: url("../img/shokko.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
 
 .promo p  {
   font-size: 18px;
@@ -270,11 +322,25 @@ a  {
   line-height: 30px; /*преимущества жирный текст и новое в нашем блоге*/
 }
 
+.features  {
+  background-color: #ece1c9;
+  background-image: url("../img/wafer.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
 
 .blog-news a  {
   font-weight: bold;
 }
 
+
+.blog-news  {
+  background-color: #ffffff;
+  background-image: url("../img/strawberry.jpg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
 
 .subscribe-gllacy label  {
   color: #5a5a5a;/*подпишитесь на рассылку*/
@@ -287,6 +353,10 @@ a  {
   font-size: 16px;
   line-height: 24px;
   color: #999999;/*подпишитесь на рассылку электроннная почта*/
+}
+
+.subscribe-form   {
+    background-color: rgb(248, 247, 244); /* почтовый фон смержить слои сделать одним рисунком можно так?*/
 }
 
 
@@ -346,33 +416,6 @@ a  {
 /*подвал*/
 
 
-
-
-
-
-
-
-
-.submenu a {
-  background-color: #ffffff;
-}
-
-.submenu .active a  {
-  background-color: #d07058; /*бекграунт находимся на странице подменюб вышла из положения так, так как находится мы можем только на странице сливочное то класс экьтив добавила ей и стилизовала*/
-}
-
-.submenu a:hover  {
-  background-color: #fbded7;
-  border-radius: 0px; /*бекграунт наведения подменю*/
-}
-
-.submenu a:focus  {
-  background-color: #f6b5a5;
-  border-radius: 0px;
-}
- /*бекграунт нажатия подменю*/
-
-
 /*.searchbutton {
   position: relative;
 }
@@ -386,20 +429,19 @@ a  {
 } выпадание поиска не работает, выносила ссылку за форму, все равно не работает
 
 
-
-
-/*slider-slides a:hover  {
-  background-color: ;
-}бекграунт нажатия   background-color: ;
-
-бекграунт наведения кнопки слайдера
-
-
-
-slider-slides a:focus {
-  background-color: ;
-  box-shadow: inset 0px 2px 2px 0px rgba(148, 39, 24, 0.004);
-}
-
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
