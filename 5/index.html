@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Глейси</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <base href="https://htmlacademy-htmlcss.github.io/472443-gllacy/5/">
+</head>
+  <body>
+    <header class="main-header">
+      <nav class="main-navigation">
+        <img src="img/logo.svg" width="154" height="64" alt="Логотип магазина Глейси"><!--удалила ссылку по тз-->
+          <ul class="site-navigation">
+            <li>
+              <a href="catalog.html">Каталог</a>
+                <ul class="submenu">
+				  <li><a class="site-navigation-news" href="#catalog.html">Новинки</a></li>
+                  <li><a href="catalog.html">Сливочное</a></li>
+                  <li><a href="#catalog.html">Щербеты</a></li>
+                  <li><a href="#catalog.htmll">Фруктовый лед</a></li>
+                  <li><a href="#catalog.html">Мелорин</a></li>
+                </ul>
+            </li>
+              <li><a href="#">Доставка и отплата</a></li>
+              <li><a href="#">О Компании</a></li>
+          </ul>
+      </nav>
+      <div class="form-wrapper"><!--как-то переназвать-->
+        <div class="user-search-div">
+        <form class="user-search" method="post" action="https://echo.htmlacademy.ru">
+          <input id="searchbox" type="search" name="search" placeholder="Что ищем">
+          <label class="visually-hidden">Пожалуйста, укажите, что будем искать</label>
+          <a class="searchbutton" href="#"><img src="img/loupe.svg" width="17" height="17" alt="Найти"></a>
+        </form>
+        </div>
+
+       <!-- <button type="button" class="entrance"><img src="img/entrance.svg" width="21" height="19" alt="Вход"><span>Вход</span></button> изначальный вариант у меня был такой-->
+        <a class="entance" href="#"><img src="img/entrance.svg" width="21" height="19" alt="Вход"><span class="entancespan">Вход</span></a>
+        <div class="user-div">
+        <form class="user" method="post" action="https://echo.htmlacademy.ru">
+          <p>
+            <input id="user-email" type="text" name="e-mail" placeholder="Электронная почта">
+            <label for="user-email" class="visually-hidden">Введите свою электронную почту</label>
+          </p>
+          <p>
+            <input id="user-password" type="password" name="password" placeholder="Пароль">
+            <label for="user-password" class="visually-hidden">Введите пароль</label>
+          </p>
+          <p>
+            <button class="entrance-button" type="submit">Войти</button>
+          </p>
+        </form>
+              <a href="#">Забыли пароль</a><br>
+              <a href="#">Новая регистрация</a>
+        </div>
+         <button type="button" class="emptybasket"><img src="img/basket.svg" width="21" height="20" alt="Пустая корзина"><span class="basketspan">Пусто</span></button>
+      </div>
+      <div class="contact">
+        <p>С 10 до 20 ежедневно<br><a class="phone" href="tel:8-812-450-25-25">8 812 450-25-25</a></p>
+      </div><!--Добавила ссылку автонабора телефона, также можно использовать вариант тег b-->
+    </header>
+    <main class="container">
+      <h1 class="visually-hidden">Магазин по продаже мороженого Глейси</h1>
+		<section class="slider">
+			<h2 class="visually-hidden">Промофото нашего магазина мороженого</h2><!--по аналогии с подвалом в майне в каждую секцию сделала скрытый заголовок-->
+                <input type="radio" id="btn-1" name="slider" checked>
+                <input type="radio" id="btn-2" name="slider">
+                <input type="radio" id="btn-3" name="slider">
+                <div class="slider-controls">
+                    <label for="btn-1">Слайд 1</label>
+                    <label for="btn-2">Слайд 2</label>
+                    <label for="btn-3">Слайд 3</label>
+                </div>
+                <div class="slider-inner">
+                    <div class="slider-slides">
+                        <div class="slide-1">
+							<img src="img/1slide.png" width="647" height="584" alt="Мороженое крем-брюле и пломбира с малиновым джемом."> <!--смущает разный размер мороженых для слайдов что с этим делать-->
+						    <p>Крем-брюле и пломбир<br>с малиновым джемом</p>
+							<a class="slider-button" href="#">Давайте оба!</a>
+                         </div>
+                        <div class="slide-2">
+							<img src="img/2slide.png" width="644" height="582" alt="Мороженое крем-брюле и пломбир с малиновым джемом.">
+						    <p>Шоколадный пломбир<br>и лимонный сорбет</p>
+							<a class="slider-button" href="#">Давайте оба!</a>
+                         </div>
+                        <div class="slide-3">
+							<img src="img/3slide.png" width="639" height="582" alt="Мороженое пломбир с помадкой и клубничного щербета."> <!--мне не нравитс альт потому что читалка прочтет ссылку и такая же фраза будет в описании фото. может поставить альт пустым? это касается всех списков мороженого с фото-->
+						    <p>Пломбир с помадкой<br>и клубничный щербет</p>
+							<a class="slider-button" href="#">Давайте оба!</a>
+                         </div>
+                    </div>
+                </div>
+            </section>
+        <!--будет переключающийся фон-->
+      <section class="promo">
+		  <h2 class="visually-hidden">Промоакции нашего магазина</h2><!--по аналогии с подвалом в майне в каждую секцию сделала скрытый заголовок-->
+          <div class="promo-item-1">
+            <h3>Малинка даром!</h3>
+            <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
+            <a class="button" href="#">Хочу варенья!</a>
+          </div>
+          <div class="promo-item-2">
+            <h3>Шоколадки даром!</h3>
+            <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
+            <a class="button" href="#">Хочу шоколадки!</a>
+          </div>
+      </section>
+      <section class="products-line">
+	    <h2 class="visually-hidden">Хиты продаж нашего магазина мороженого Глейси</h2>
+		  <ul class="products-line-list">
+		    <li>
+              <img src="img/product1-1.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
+              <h3><a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
+              <p class="products-line-price">310 ₽<span class="weight">/кг</span></p>
+              <button class="button" type="button">Быстрый просмотр</button>
+            </li>
+            <li>
+              <img src="img/product2-1.jpg" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
+              <h3><a href="#">Сливочно-кофейное с кусочками шоколада</a></h3>
+              <p class="products-line-price">380 ₽<span class="weight">/кг</span></p>
+              <button class="button" type="button">Быстрый просмотр</button>
+            </li>
+            <li>
+              <img src="img/product3-1.jpg" width="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+              <h3><a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a></h3>
+              <p class="products-line-price">355 ₽<span class="weight">/кг</span></p>
+              <button class="button" type="button">Быстрый просмотр</button>
+            </li>
+            <li>
+              <img src="img/product4-1.jpg" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
+              <h3><a href="#">Сливочное крем-брюле с карамельной подливкой</a></h3>
+              <p class="products-line-price">415 ₽<span class="weight">/кг</span></p>
+              <button class="button" type="button">Быстрый просмотр</button>
+            </li>
+		  </ul>
+      </section>
+      <section class="features">
+          <h2 class="visually-hidden">Наши преимущества</h2>
+          <b>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</b>
+          <ul class="features-list">
+            <li class="features-item"><img src="img/ice-cream.svg" width="49" height="49" alt="Мороженое">Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</li>
+            <li class="features-item"><img src="img/eco.svg" width="49" height="49" alt="Листок">Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</li>
+            <li class="features-item"><img src="img/cow.svg" width="49" height="49" alt="Корова">Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</li>
+            <li class="features-item"><img src="img/thermometer.svg" width="49" height="49" alt="Термометр">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
+          </ul>
+        </section>
+        <section class="blog-news">
+			   <h3>Новое в нашем блоге</h3>
+			   <a href="#">10 способов сервировки фруктовых щербетов к столу</a>
+        </section>
+        <section class="subscribe-form">
+			   <h3 class="visually-hidden">Подписка на рассылку магазина мороженого Глейси</h3>
+			   <form class="subscribe-gllacy" action="https://echo.htmlacademy.ru" method="post">
+               <p>
+                 <label for="subscribe">Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</label>
+               </p>
+               <p>
+                 <input type="email" name="email" id="subscribe" placeholder="Электронная почта">
+                 <button class="button" type="submit">Отправить</button>
+               </p> <!-- поставила фразу с предложением подписки как подпись к форме-->
+               </form>
+        </section>
+		<section class="contacts">
+         <h3 class="visually-hidden">Как нас найти</h3>
+         <img class="map" src="img/map.jpg" width="1200" height="430" alt="Адрес главного офиса: ул. Большая Конюшенная 19/8, Санкт-Петербург">
+         <div class="head-office">
+           <p>Адрес главного офиса<br>и офлайн-магазина:<b>ул. Большая Конюшенная 19/8, Санкт-Петербург</b></p>
+           <p>Для заказов по телефону:<b>8 812 450-25-25</b>(с 10 до 20 ежедневно)</p>
+           <a class="button" href="#">Форма обратной связи</a>
+          </div>
+           <div class="feedbackform">
+             <h2 class="visually-hidden">Напишите нам</h2>
+             <p><b>Мы обязательно вам ответим!</b></p>
+
+               <form action="https://echo.htmlacademy.ru" method="post">
+               <label class="visually-hidden" for="feedbackform-name">Пожалуйста, укажите как Вас зовут</label>
+               <input type="text" name="name" id="feedbackform-name" placeholder="Как вас зовут?"><br> <!--хотела поставить параграф но валидатор ругается-->
+
+
+               <label class="visually-hidden" for="feedbackform-email">Электронная почта для получения ответа:</label>
+               <input type="email" name="email" value="" id="feedbackform-email" placeholder="Ваша почта для ответа?"><br>
+
+             <p class="visually-hidden">Введите ваше сообщение</p>
+             <textarea>Напишите что-нибудь...</textarea><br>
+             <button class="feedback-button" type="submit">Отправить</button>
+              </form>
+              <button class="feedbackform-close" type="button">
+              <span class="visually-hidden">Закрыть</span>
+              </button>
+             </div>
+          </section>
+
+
+    </main>
+    <footer class="main-footer">
+        <section class="media">
+          <h3 class="visually-hidden">Мы в социальных сетях</h3>
+          <ul class="social">
+          <li><a href="#" class="social social-tw">Твиттер</a></li>
+          <li><a href="#" class="social social-insta">Инстаграмм</a></li>
+          <li><a href="#" class="social social-fb">Фейсбук</a></li>
+          <li><a href="#" class="social social-vk">В контакте</a></li>
+          </ul>
+        </section>
+        <section class="info">
+          <h3 class="visually-hidden">Блок с информацией</h3>
+          <span class="heart"><img src="img/heart.svg" width="15" height="13" alt="Сердце">
+          </span><!-- Сердце решить куда его деть-->
+          <ul class="info-link">
+            <li><a href="#" class="info-link link partners">Для поставщиков</a></li>
+            <li><a href="#" class="info-link link">О производстве</a></li>
+            <li><a href="#" class="info-link link">Наши документы</a></li>
+            <li><a href="#" class="info-link link">Экологические стандарты</a></li>
+            </ul>
+         </section>
+         <section class="copyright">
+           <h3 class="visually-hidden">Копирайт</h3>
+           <a class="htmlacademy-logo" href="https://htmlacademy.ru/intensive/htmlcss"><img src="img/logo-htmlacademy.svg" width="108" height="39" alt="Логотип HTML Академии"></a>
+           <span class="htmlacademy-logo">Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a> © 2017</span>
+         </section>
+    </footer>
+	  <!--смущает каскад, некрасивый, смущает выбор уровней заголовков, наверное придется добавлять некоторым элементам классы-->
+  </body>
+</html>
