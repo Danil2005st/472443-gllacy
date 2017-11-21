@@ -46,7 +46,7 @@ a  {
 }
 
 .submenu a,
-.user a,
+.user-div a,
 .basket a,
 .basket-item,
 .basket-popup p,
@@ -73,7 +73,7 @@ a  {
 } /* размер текста и цвет в формах (плейсхолдеры*/
 
 
-.user a {
+.user-div a {
   font-size: 13px;
   line-height: 24px; /*ссылки забыли пароль и новая регистрация*/
 }
@@ -158,7 +158,7 @@ a  {
 }
 
 
-.user {
+.user-div {
   background-color: #f8f7f4;
 }
 
@@ -442,19 +442,25 @@ a  {
 /*подвал*/
 
 
-.searchbutton {
-  position: relative;
-}
 
 #searchbox {
   display: none;
 }
 
-.searchbutton:hover #searchbox  {
+.user-search-div form:hover #searchbox  {
   display: block;
-} /*ыпадание поиска не работает пока ну ладно*/
+} /*выпадание поиска заработало когда обернула в див эту форму*/
 
 
+
+.user-div {
+  display: none;
+}
+
+
+.entance:hover +  .user-div  {
+  display: block;
+} /*выпадание входа заработало когда переделала форму*/
 
 
 
