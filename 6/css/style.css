@@ -1,0 +1,769 @@
+body  {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Tahoma", sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+  color: #fff;
+  background-color: #849d8f;
+  background-position: center top;
+  background-repeat: no-repeat;
+  width: 1200px;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+
+
+a  {
+  text-decoration: none;
+  color: #fff;/*убрала цвет и подчеркивание ссылок*/
+}
+
+
+.site-navigation,
+.submenu,
+.products-line-list,
+.features-list,
+.social,
+.info-link,
+.breadcrumbs,
+.pagination-list  {
+  list-style: none;/*убрала точки со списков*/
+}
+
+
+.site-navigation>li>a  {
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #fff;/*шрифт меню*/
+}
+
+
+.contact p,
+.submenu a,
+.basket-span,
+.entancespan  {
+  font-size: 14px;
+  line-height: 16px;
+  color: #fff;
+  /*размер текста входа, корзины, время работы и подменю*/
+}
+
+
+.submenu a,
+.user-div a,
+.basket a,
+.basket-item,
+.basket-popup p,
+.features-item,
+h1,
+.blog-news a,
+.blog-news h3,
+.head-office p,
+.feedbackform b {
+  color: #323232; /*общие цвета для разных элементов*/
+}
+
+
+.submenu li:first-child,
+.contact p  {
+  font-weight: bold; /* жирность новинок*/
+}
+
+
+.user-search input,
+.user input  {
+  font-size: 14px;
+  line-height: 24px;
+  color:#999;
+} /* размер текста и цвет в формах (плейсхолдеры*/
+
+
+.user-div a {
+  font-size: 13px;
+  line-height: 24px; /*ссылки забыли пароль и новая регистрация*/
+}
+
+
+
+.phone  {
+  font-size: 22px;
+  line-height: 24px;
+  font-weight: bold; /*телефон*/
+}
+
+
+.site-navigation a:focus  {
+  background-color: #ededed;
+  box-shadow: inset 0px 2px 1px 0px #696969;
+  border-radius: 12px;
+  padding: 5px;
+}/*бекграунт нажатия главноеменю*/
+
+
+.site-navigation a:hover  {
+  background-color: #f8f7f4;
+  color: #323232;
+  border-radius: 12px;
+  padding: 5px;/*наведение главное меню*/
+}
+
+
+.opener {
+  background-color: #d07058;
+  border-radius: 12px;
+  padding: 5px;
+}/*бекграунт находимся на странице каталога*/
+
+
+.submenu  {
+  background-color: #f8f7f4;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.40);
+}
+
+
+.submenu .active a  {
+  background-color: #d07058;
+  border-radius: 0px;/*бекграунт находимся на странице подменюб вышла из положения так, так как находится мы можем только на странице сливочное то класс эктив добавила ей и стилизовала*/
+}
+
+
+.submenu a:hover  {
+  background-color: #fbded7;
+  border-radius: 0px; /*бекграунт наведения подменю*/
+}
+
+.submenu a:focus  {
+  background-color: #f6b5a5;
+  border-radius: 0px;
+}
+ /*бекграунт нажатия подменю*/
+
+
+
+.user-search,
+.user-div,
+.basket-popup  {
+  background-color: #f8f7f4;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.40);
+}
+
+
+
+.basket a,
+.breadcrumbs,
+.sort-type legend,
+.range-type p,
+.fatness-type legend,
+.filler-type legend  {
+  font-size: 14px;
+  line-height: 16px; /*корзина с товарами шрифт*/
+}
+
+.basket-item  {
+  font-size: 13px;
+  line-height: 24px;
+}
+
+
+.basket-item span  {
+  color:#999; /*переопределяю цвет последней графы указала такой же как у плейсхолдеров*/
+}
+
+
+.basket-popup p  {
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: bold; /* размер итого */
+}
+
+
+.user button,
+.promo-item-1 a,
+.promo-item-2 a,
+.products-line-list button,
+.subscribe-gllacy button,
+.head-office a,
+.feedback-button,
+.entrance-button,
+.order-button  {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+  background-image: linear-gradient( 90deg, #e74a35 0%, #f26843 100%);
+   /*кнопки*/
+}
+
+
+
+
+.user button,
+.products-line-list button,
+.subscribe-gllacy button,
+.feedback-button,
+.order-button {
+  border:  none;
+  text-align: center;
+  vertical-align: middle;
+  border-color: #e74a35; /* нужен он или нет, не знаю зачем указала*/
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+
+.order-button,
+.user button,
+.subscribe-gllacy button,
+.feedback-button,
+.order-button,
+.products-line-list button,
+.type button  {
+  color: #fff;
+}
+
+.promo-item-1 a,
+.promo-item-2 a,
+.subscribe-gllacy button,
+.head-office a,
+.feedback-button,
+.slider-button   {
+  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64); /* тени от кнопок */
+}
+
+.entrance-button,
+.products-line-list button,
+.basket-popup button {
+  box-shadow: 0px 1px 2px 0px #ac1000;
+}
+
+
+/* шапка и некоторые общие элементы */
+
+
+
+.slider-slides p  {
+  font-size: 60px;
+  line-height: 60.35px;
+  font-weight: bold;
+  margin: 0;/*текст слайдера*/
+}
+
+.slider-button  {
+  font-size: 32px;
+  line-height: 44px;
+  font-weight: bold;
+  background-image: linear-gradient( 90deg, #e74a35 0%, #f26843 100%);
+  border-radius: 30px;
+  text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76); /*кнопка слайдера плюс тень от текста работает при всех состояниях плюс в фотошопе есть outer glow в эффектах текста в значении 34% опасити, что это такое?*/
+}
+
+.slider-slides a:hover  {
+  color: #ffffff;
+  background-image:
+    linear-gradient( to top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%),
+    linear-gradient( to top, #e74a35 0%, #f26843 100%);
+  box-shadow: 0px 2px 2px 0px #ac1000;
+}/*бекграунт наведения кнопки слайдера*/
+
+.slider-slides a:active {
+  background-image:
+    linear-gradient( to top, rgba(000, 000, 000, 0.07) 0%, rgba(000, 000, 000, 0.07) 100%),
+    linear-gradient( to top, #e74a35 0%, #f26843 100%);
+  box-shadow: inset 0px 2px 2px 0px #942718;
+}
+ /*нажатие кнопки слайдера */
+
+.promo-item-1 a:hover,
+.promo-item-2 a:hover  {
+  color: #ffffff;
+  background-image:
+    linear-gradient( to top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%),
+    linear-gradient( to top, #e74a35 0%, #f26843 100%);
+  box-shadow: 0px 1px 2px 0px #ac1000;
+}/*бекграунт наведения кнопки хочу малинки шоколадки*/
+
+.promo-item-1 a:active,
+.promo-item-2 a:active  {
+ background-image:
+   linear-gradient( to top, rgba(0, 0, 0, 0.07) 0%, rgba(0, 0, 0, 0.07) 100%),
+   linear-gradient( to top, #e74a35 0%, #f26843 100%);
+  box-shadow: inset 0px 2px 2px 0px #942718;
+}
+ /*нажатие кнопки хочу малинки шоколадки так надо стилизовать все кнопки сделаю*/
+
+
+
+.promo-item-1 h3,
+.promo-item-2 h3  {
+  font-size: 35px;
+  line-height: 41px;
+  font-weight: bold; /*заголовки промо малинка даром*/
+}
+
+.promo-item-1  {
+  background-color: #b73b60;
+  background-image: url("../img/rastberry.jpg");
+  border-radius: 15px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+
+.promo-item-2  {
+  background-color: #421e0b;
+  background-image: url("../img/shokko.jpg");
+  border-radius: 15px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.promo p  {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: bold;
+} /*тест промо*/
+
+
+.products-line-list h3  {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+
+.products-line-price  {
+  font-size: 45px;
+  line-height: 45px;
+  font-weight: bold;
+  text-shadow: 0px 1px 3px rgba(49, 50, 53, 0.5);
+  margin: 0;/*цена мороженного шрифта*/
+}
+
+.weight  {
+  font-size: 30px;
+  line-height: 45px;
+  font-weight: bold; /*цена спан кг размер шрифта*/
+}
+
+
+h1,
+.blog-news a  {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;/*преимущества жирный текст и новое в нашем блоге*/
+}
+
+.features  {
+  background-color: #ece1c9;
+  background-image: url("../img/wafer.jpg");
+  background-position: 0 0;
+  background-repeat: repeat;
+  border-radius: 15px;
+}
+
+
+.blog-news a  {
+  font-weight: bold;
+}
+
+
+.blog-news  {
+  background-color: #fff;
+  background-image: url("../img/strawberry.jpg");
+  background-position: 173px -37px;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+}
+
+.subscribe-gllacy label  {
+  color: #5a5a5a;/*подпишитесь на рассылку*/
+}
+
+
+ .subscribe-gllacy input,
+.feedbackform input,
+.feedbackform textarea {
+  font-size: 16px;
+  line-height: 24px;
+  color: #999;/*подпишитесь на рассылку электроннная почта*/
+}
+
+.subscribe-form  {
+  background-color: #f8f7f4;
+  border-radius: 15px;/* почтовый фон градиент и бокс шадоу сделать им?*/
+}
+
+
+.head-office p  {
+  font-size: 14px;
+  line-height: 20px;  /* адрес главного офиса текст */
+}
+
+.head-office b  {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.current-item  {
+  font-size: 35px;
+  line-height: 41px;
+  font-weight: bold; /*сливочное мороженое*/
+}
+
+
+.fatness-type label,
+.filler-type label,
+.type button,
+.pagination-list  {
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.head-office  {
+  background-color: #fdfefe;
+}
+
+.feedbackform  {
+  background-color: #f8f7f4;
+}
+
+/*мэйн*/
+
+
+
+.info-link li  {
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.info-link li:first-child {
+  font-weight: bold;
+}
+
+
+.htmlacademy-logo {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+
+.feedbackform b  {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+
+/*подвал*/
+
+
+
+
+/*выпадающие меню*/
+
+.user-div {
+  display: none;
+}
+
+.user-div p {
+  margin: 0 0 10px;
+}
+
+.login:hover  .user-div  {
+  display: block;
+} /*выпадание входа все ок делали вместе на консультации */
+
+
+.site-navigation > li {
+    position: relative;
+}
+
+.submenu  {
+  position: absolute;
+  display: none;
+  top: 30%; /*ПОМЕНЯЛА ЧТОБЫ ПРЯМО ПОД МЕНЮ ОТКРЫВАЛСЯ*/
+  z-index:1;
+  margin-top: 5px;
+  left: 0;
+  width: 144px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: #fff;
+  border-radius: 10px;
+}
+
+
+.submenu a {
+  display: block; /*чтобы цвет по всей строке с пунктом*/
+}
+
+.submenu li a {
+ padding: 10px 20px 10px 20px; /*некрасиво ползают слова и потрясываются при наведении. как бы слово выползает вперед и потому даже рамку загораживает и та становитс квадратной когда наводишь на первый пункт*/
+}
+
+
+.site-navigation > li:hover .submenu {
+    display: block;
+} /* выпадашка подменю*/
+
+
+.basket-popup {
+  display: none;
+  position: absolute;
+}
+
+
+.basket a:hover + .basket-popup  {
+  display: block;
+}
+
+.search-popup {
+  display: none;
+  margin: 0 0 10px 0;
+  padding: 0;
+  right: 150px;
+  position: absolute;
+}
+
+.search-button:hover + .search-popup  {
+  display: block;
+} /*выпадание поиска и корзины работает только с плюсом и не могу снова попасть в само окно наверно не допоняла. Может переделать эту часть и поставить поиск вход и корзину списком?*/
+
+/*выпадающие меню конец*/
+
+
+
+
+/*сетки начало потом перенесу по соответствующим разделам*/
+.main-header  {
+  display:  flex;
+  justify-content: space-between;
+}
+
+.main-navigation {
+  display:  flex;
+}
+
+.site-navigation  {
+  display:  flex;
+  margin: 0;
+  padding: 15px 0 0 0;
+}
+
+.site-navigation>li {
+  padding: 0 0 0 25px;
+  margin: 0;
+}
+
+
+.flex-header-rigth {
+  display:  flex;
+}
+
+.form-wrapper  {
+  display:  flex;
+  padding: 15px 0 0 0;
+  justify-content: space-between;
+}
+
+
+.breadcrumbs {
+  display: flex;
+  padding: 0;
+}
+
+.breadcrumbs li:first-child::after,
+.breadcrumbs li:nth-child(2)::after{
+  content: "\00BB";
+}
+
+.type {
+  display: flex;
+}
+
+
+.flex-type-1  {
+  display: flex;
+}
+
+
+.flex-type-2  {
+  display: flex;
+}
+
+.promo {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 37px 0;
+}
+
+.promo-item-1,
+.promo-item-2  {
+  width: 560px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.promo-item-1 h3,
+.promo-item-2 h3  {
+  margin: 20px 0 0 20px;
+}
+
+.promo-item-1 p,
+.promo-item-2 p  {
+  margin: 20px 0 45px 20px;
+}
+
+.promo-item-1 a,
+.promo-item-2 a  {
+  align-self: flex-end;
+  margin: 0 35px 35px 0;
+}
+
+
+
+
+.products-line-list  {
+  display:  flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.products-line-list img {
+  border-radius: 50%;
+}
+
+.products-line-list {
+  padding: 0;/*первая лишка очень большая пытаюсь избавится от этого, не выходит*/
+  margin: 0 0 37px 0;/*первая лишка очень большая пытаюсь избавится от этого, не выходит*/
+}
+
+.products-line-list li {
+  width: 22.2%; /*из ТЗ*/
+  text-align: center;
+  padding: 0; /*первая лишка очень большая пытаюсь избавится от этого, не выходит*/
+  margin: 0; /*первая лишка очень большая пытаюсь избавится от этого, не выходит*/
+}
+
+
+
+.features-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 0 37px 0;
+}
+
+.features-list li {
+  width: 540px;
+}
+
+
+.flex-col-news-subscribe {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 37px 0;
+}
+
+.blog-news,
+.subscribe-form {
+  width: 560px;
+}
+
+
+
+.head-office  {
+  width: 300px;
+  border-radius: 15px;
+  z-index: 1;
+  top: 3700px;/*потом передвину когда слайдер будет готов*/
+  left: 850px;
+  position: absolute;
+ /* разобраться с модальным окном обратной связи и еще мороженое тоже туда*/
+}
+
+.map {
+  z-index: 2;
+}
+
+.pagination-list {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.social {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.social-tw::before {
+  content: url(../img/twitter.svg);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%; /*обводку хочу задать контенту получается странно*/
+}
+
+.social-insta::before {
+  content: url(../img/instagram.svg);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%; /*обводку хочу задать контенту получается странно*/
+}
+
+.social-fb::before {
+  content: url(../img/fb.svg);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%; /*обводку хочу задать контенту получается странно*/
+}
+
+
+.social-vk::before {
+  content: url(../img/vk.svg);
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%; /*обводку хочу задать контенту получается странно*/
+}
+
+
+
+.info {
+  display: flex;
+}
+
+.info-link {
+  padding: 0;
+  margin: 0;
+}
+
+.info-link-1::before {
+  content: url(../img/heart.svg);
+}
+
+.copyright  {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
