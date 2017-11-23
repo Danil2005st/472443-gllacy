@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet">
+    <span class="gllacy-logo"><link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=cyrillic" rel="stylesheet"></span>
     <link href="css/normalize.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
     <header class="main-header">
+
       <nav class="main-navigation">
-        <img src="img/logo.svg" width="154" height="64" alt="Логотип магазина Глейси"><!--удалила ссылку по тз-->
+        <img src="img/logo.svg" width="154" height="64" alt="Логотип магазина Глейси">
           <ul class="site-navigation">
-            <li>
+             <li>
               <a href="catalog.html">Каталог</a>
                 <ul class="submenu">
 				  <li><a class="site-navigation-news" href="#catalog.html">Новинки</a></li>
@@ -21,21 +22,24 @@
                   <li><a href="#catalog.htmll">Фруктовый лед</a></li>
                   <li><a href="#catalog.html">Мелорин</a></li>
                 </ul>
-            </li>
+              </li>
               <li><a href="#">Доставка и отплата</a></li>
               <li><a href="#">О Компании</a></li>
           </ul>
       </nav>
+
+      <div class="flex-header-right">
       <div class="form-wrapper"><!--как-то переназвать-->
         <div class="user-search-div">
-        <form class="user-search" method="post" action="https://echo.htmlacademy.ru">
+          <a class="searchbutton" href="#"><img src="img/loupe.svg" width="17" height="17" alt="Найти"></a>
+          <div class="search-popup">
+          <form class="user-search" method="post" action="https://echo.htmlacademy.ru">
           <input id="searchbox" type="search" name="search" placeholder="Что ищем">
           <label class="visually-hidden">Пожалуйста, укажите, что будем искать</label>
-          <a class="searchbutton" href="#"><img src="img/loupe.svg" width="17" height="17" alt="Найти"></a>
-        </form>
+          </form>
+          </div>
         </div>
-
-       <!-- <button type="button" class="entrance"><img src="img/entrance.svg" width="21" height="19" alt="Вход"><span>Вход</span></button> изначальный вариант у меня был такой-->
+        <div class="login">
         <a class="entance" href="#"><img src="img/entrance.svg" width="21" height="19" alt="Вход"><span class="entancespan">Вход</span></a>
         <div class="user-div">
         <form class="user" method="post" action="https://echo.htmlacademy.ru">
@@ -54,16 +58,17 @@
               <a href="#">Забыли пароль</a><br>
               <a href="#">Новая регистрация</a>
         </div>
+        </div>
          <button type="button" class="emptybasket"><img src="img/basket.svg" width="21" height="20" alt="Пустая корзина"><span class="basketspan">Пусто</span></button>
       </div>
       <div class="contact">
         <p>С 10 до 20 ежедневно<br><a class="phone" href="tel:8-812-450-25-25">8 812 450-25-25</a></p>
-      </div><!--Добавила ссылку автонабора телефона, также можно использовать вариант тег b-->
+      </div>
+      </div>
     </header>
     <main class="container">
-      <h1 class="visually-hidden">Магазин по продаже мороженого Глейси</h1>
 		<section class="slider">
-			<h2 class="visually-hidden">Промофото нашего магазина мороженого</h2><!--по аналогии с подвалом в майне в каждую секцию сделала скрытый заголовок-->
+			<h2 class="visually-hidden">Промофото нашего магазина мороженого</h2>
                 <input type="radio" id="btn-1" name="slider" checked>
                 <input type="radio" id="btn-2" name="slider">
                 <input type="radio" id="btn-3" name="slider">
@@ -92,9 +97,8 @@
                     </div>
                 </div>
             </section>
-        <!--будет переключающийся фон-->
       <section class="promo">
-		  <h2 class="visually-hidden">Промоакции нашего магазина</h2><!--по аналогии с подвалом в майне в каждую секцию сделала скрытый заголовок-->
+		  <h2 class="visually-hidden">Промоакции нашего магазина</h2>
           <div class="promo-item-1">
             <h3>Малинка даром!</h3>
             <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
@@ -137,7 +141,7 @@
       </section>
       <section class="features">
           <h2 class="visually-hidden">Наши преимущества</h2>
-          <b>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</b>
+          <h1>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</h1> <!--показалось что это отличный заголовок первого уровня-->
           <ul class="features-list">
             <li class="features-item"><img src="img/ice-cream.svg" width="49" height="49" alt="Мороженое">Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</li>
             <li class="features-item"><img src="img/eco.svg" width="49" height="49" alt="Листок">Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</li>
@@ -145,10 +149,12 @@
             <li class="features-item"><img src="img/thermometer.svg" width="49" height="49" alt="Термометр">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
           </ul>
         </section>
+        <div class="flex-col-news-subscribe">
         <section class="blog-news">
 			   <h3>Новое в нашем блоге</h3>
 			   <a href="#">10 способов сервировки фруктовых щербетов к столу</a>
         </section>
+
         <section class="subscribe-form">
 			   <h3 class="visually-hidden">Подписка на рассылку магазина мороженого Глейси</h3>
 			   <form class="subscribe-gllacy" action="https://echo.htmlacademy.ru" method="post">
@@ -161,6 +167,7 @@
                </p> <!-- поставила фразу с предложением подписки как подпись к форме-->
                </form>
         </section>
+        </div>
 		<section class="contacts">
          <h3 class="visually-hidden">Как нас найти</h3>
          <img class="map" src="img/map.jpg" width="1200" height="430" alt="Адрес главного офиса: ул. Большая Конюшенная 19/8, Санкт-Петербург">
@@ -197,16 +204,14 @@
         <section class="media">
           <h3 class="visually-hidden">Мы в социальных сетях</h3>
           <ul class="social">
-          <li><a href="#" class="social social-tw">Твиттер</a></li>
-          <li><a href="#" class="social social-insta">Инстаграмм</a></li>
-          <li><a href="#" class="social social-fb">Фейсбук</a></li>
-          <li><a href="#" class="social social-vk">В контакте</a></li>
+          <li><a href="#" class="social social-tw"><span class="visually-hidden">Мы в Твиттере</span></a></li>
+          <li><a href="#" class="social social-insta"><span class="visually-hidden">Мы в Инстаграмме</span></a></li>
+          <li><a href="#" class="social social-fb"><span class="visually-hidden">Мы в Фейсбуке</span></a></li>
+          <li><a href="#" class="social social-vk"><span class="visually-hidden">Мы в ВКонтакте</span></a></li>
           </ul>
         </section>
         <section class="info">
           <h3 class="visually-hidden">Блок с информацией</h3>
-          <span class="heart"><img src="img/heart.svg" width="15" height="13" alt="Сердце">
-          </span><!-- Сердце решить куда его деть-->
           <ul class="info-link">
             <li><a href="#" class="info-link link partners">Для поставщиков</a></li>
             <li><a href="#" class="info-link link">О производстве</a></li>

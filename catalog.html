@@ -9,6 +9,7 @@
   </head>
   <body>
     <header class="main-header">
+
       <nav class="main-navigation">
         <a class="gllacy-logo" href="/index.html"><img src="img/logo.svg" width="154" height="64" alt="Логотип магазина Глейси"></a>
             <ul class="site-navigation">
@@ -26,15 +27,18 @@
               <li><a href="#">О Компании</a></li>
             </ul>
       </nav>
+      <div class="flex-header-right">
       <div class="form-wrapper">
         <div class="user-search-div">
-        <form class="user-search" method="post" action="https://echo.htmlacademy.ru">
+          <a class="searchbutton" href="#"><img src="img/loupe.svg" width="17" height="17" alt="Найти"></a>
+          <div class="search-popup">
+          <form class="user-search" method="post" action="https://echo.htmlacademy.ru">
           <input id="searchbox" type="search" name="search" placeholder="Что ищем">
           <label class="visually-hidden">Пожалуйста, укажите, что будем искать</label>
-          <a class="searchbutton" href="#"><img src="img/loupe.svg" width="17" height="17" alt="Найти"></a>
-        </form>
+          </form>
+          </div>
         </div>
-        <!-- <button type="button" class="entrance"><img src="img/entrance.svg" width="21" height="19" alt="Вход"><span>Вход</span></button> изначальный вариант у меня был такой-->
+        <div class="login">
         <a class="entance" href="#"><img src="img/entrance.svg" width="21" height="19" alt="Вход"><span class="entancespan">Вход</span></a>
         <div class="user-div">
         <form class="user" method="post" action="https://echo.htmlacademy.ru">
@@ -52,6 +56,7 @@
         </form>
               <a href="#">Забыли пароль</a><br>
               <a href="#">Новая регистрация</a>
+        </div>
         </div>
         <div class="basket">
           <a href="#" aria-label="Корзина покупок"><img src="img/basket-red.svg" width="21" height="20" alt="Заполненная корзина">2 товара</a>
@@ -79,7 +84,8 @@
       </div>
       <div class="contact">
       <p>С 10 до 20 ежедневно<br><a class="phone" href="tel:8-812-450-25-25">8 812 450-25-25</a></p>
-      </div> <!--Добавила ссылку автонабора телефона, также можно использовать вариант тег b-->
+      </div>
+      </div>
     </header>
     <main class="catalog-container">
 
@@ -92,9 +98,10 @@
     <h2 class="current-item">Сливочное мороженое</h2>
 
     <section class="type">
-      <h2 class="visually_hidden">Выбор мороженого по критериям</h2>
+      <h2 class="visually-hidden">Выбор мороженого по критериям</h2>
         <form action="https://echo.htmlacademy.ru" method="get">
-		  <fieldset class="sort-type">
+		  <div class="flex-type-1">
+          <fieldset class="sort-type">
 		    <legend>Сортировка:</legend>
 		      <select name="sort">
 		        <option selected>по популярности</option>
@@ -117,7 +124,9 @@
 					<input type="radio" id="fatness-4" name="fatness">
                     <label for="fatness-4">выше 30%</label>
 				</fieldset>
-				<fieldset class="filler-type">
+          </div>
+		  <div class="flex-type-2">
+                <fieldset class="filler-type">
 					<legend>Наполнители:</legend>
                     <input type="checkbox" id="filler-1" name="filler" checked>
                     <label for="filler-1">шоколадные</label>
@@ -132,6 +141,7 @@
 				</fieldset>
 				<button type="submit" class="type-button">Применить</button>
 			</form>
+          </div>
     </section>
     <section class="products-line">
       <h1 class="visually-hidden">Ассоримент мороженого магазина Глейси</h1>
@@ -224,16 +234,14 @@
         <section class="media">
           <h3 class="visually-hidden">Мы в социальных сетях</h3>
           <ul class="social">
-          <li><a href="#" class="social social-tw">Твиттер</a></li>
-          <li><a href="#" class="social social-insta">Инстаграмм</a></li>
-          <li><a href="#" class="social social-fb">Фейсбук</a></li>
-          <li><a href="#" class="social social-vk">В контакте</a></li>
+          <li><a href="#" class="social social-tw"><span class="visually-hidden">Мы в Твиттере</span></a></li>
+          <li><a href="#" class="social social-insta"><span class="visually-hidden">Мы в Инстаграмме</span></a></li>
+          <li><a href="#" class="social social-fb"><span class="visually-hidden">Мы в Фейсбуке</span></a></li>
+          <li><a href="#" class="social social-vk"><span class="visually-hidden">Мы в ВКонтакте</span></a></li>
           </ul>
         </section>
         <section class="info">
           <h3 class="visually-hidden">Блок с информацией</h3>
-          <span class="heart"><img src="#" width="15" height="13" alt="Сердце">
-          </span><!-- Сердце решить куда его деть-->
           <ul class="info-link">
             <li><a href="#" class="info-link link partners">Для поставщиков</a></li>
             <li><a href="#" class="info-link link">О производстве</a></li>
