@@ -5,14 +5,24 @@ body  {
   font-size: 16px;
   line-height: 22px;
   font-weight: 400;
-  color: #fff;
+  color:#fff;
   background-color: #849d8f;
   background-position: center top;
   background-repeat: no-repeat;
-  width: 1200px;
+  width: 1200px; /* поставить у хедера футера и мейна*/
 }
 
-.visually-hidden {
+header.main-header,
+main.container,
+main.catalog-container,
+footer.main-footer {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -27,12 +37,15 @@ body  {
 }
 
 
-
-a  {
+a {
   text-decoration: none;
-  color: #fff;/*убрала цвет и подчеркивание ссылок*/
+  color: #fff;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 .site-navigation,
 .submenu,
@@ -41,27 +54,96 @@ a  {
 .social,
 .info-link,
 .breadcrumbs,
-.pagination-list  {
-  list-style: none;/*убрала точки со списков*/
+.pagination-list {
+  list-style: none;
+}
+
+.entrance-button,
+.slider-button,
+.empty-basket,
+.button,
+.button-promo,
+.button-subscribe,
+.button-fbform,
+.feedback-button,
+.order-button {
+  display: inline-block;
+  font: inherit;
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  margin: 0;
+}
+
+.search-button,
+.entrance,
+.empty-basket,
+.basket a {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  position: relative;
 }
 
 
-.site-navigation>li>a  {
+.entrance-button,
+.slider-button,
+.button,
+.button-promo,
+.button-subscribe,
+.button-fbform,
+.feedback-button,
+.order-button {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.entrance-button,
+.button-promo {
+ padding-left: 25px;
+ padding-right: 25px;
+}
+
+
+
+
+.catalog-link,
+.delivery-link,
+.companyinfo-link {
+  display: inline-block;
   font-size: 16px;
   line-height: 18px;
   font-weight: bold;
-  color: #fff;/*шрифт меню*/
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(255,255,255,0.2);
+  padding: 7px 14px; /*но подчеркивание соответственно получается очень далеко от слов А ЕСЛИ СНИЗУ ЗАДАТЬ МАРДЖИН, раньше падинг был в ховере и прыгали слова*/
+
 }
 
+.submenu li:first-of-type {
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(209,208,206,0.2);
+}
 
 .contact p,
 .submenu a,
 .basket-span,
-.entancespan  {
+.entrance-span  {
   font-size: 14px;
   line-height: 16px;
   color: #fff;
-  /*размер текста входа, корзины, время работы и подменю*/
+}
+
+.user-search-div a,
+.entrance,
+.empty-basket,
+.sort-type select,
+.fatness-type,
+.filler-type  {
+  background-color: rgba(255, 255, 255,0.2);
 }
 
 
@@ -76,27 +158,195 @@ h1,
 .blog-news h3,
 .head-office p,
 .feedbackform b {
-  color: #323232; /*общие цвета для разных элементов*/
+  color: #323232;
 }
 
 
 .submenu li:first-child,
 .contact p  {
-  font-weight: bold; /* жирность новинок*/
+  font-weight: bold;
+}
+
+.submenu li:first-child>a {
+  border-radius: 4px 4px 0 0;
+}
+
+.submenu li:last-child>a {
+  border-radius: 0 0 4px 4px;
 }
 
 
-.user-search input,
-.user input  {
+
+.catalog-link:focus,
+.delivery-link:focus,
+.companyinfo-link:focus  {
+  background-color: #ededed;
+  box-shadow: inset 0px 2px 1px 0px #696969;
+  border-radius: 14px;
+  padding: 7px 14px;
+}
+
+.site-navigation a:hover  {
+  background-color: #f8f7f4;
+  color: #323232;
+  border-radius: 14px;
+}
+
+
+.catalog-link,
+.delivery-link,
+.companyinfo-link  {
+  position: relative;
+}
+
+.submenu  {
+  position: absolute;
+  display: none;
+  top: 10%;
+  z-index:1;
+  margin-top: 5px;
+  left: 60px;
+  width: 144px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #f8f7f4;
+  border-radius: 4px;
+  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.40);
+}
+
+.submenu a {
+  display: block;
+}
+
+.submenu li a {
+ padding: 10px 20px;
+}
+
+
+.site-navigation > li:hover .submenu {
+    display: block;
+}
+
+.opener {
+  background-color: #d07058;
+  border-radius: 14px;
+  padding: 7px 14px;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  vertical-align: middle;
+}
+
+
+.submenu .active a  {
+  background-color: #d07058;
+  border-radius: 0px;
+}
+
+
+.submenu a:hover  {
+  background-color: #fbded7;
+  border-radius: 0px;
+}
+
+.submenu a:focus  {
+  background-color: #f6b5a5;
+  border-radius: 0px;
+}
+
+
+.search-button {
+  border-radius: 50%;
+  padding: 18px;
+}
+
+a.entrance {
+  padding: 7px 16px 7px 44px;
+  border-radius: 15px;
+}
+
+.icon-entrance {
+  width: 21px;
+  height: 19px;
+  position: absolute;
+  right: 50px;
+}
+
+.icon-loupe {
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.icon-basket-red {
+  width: 21px;
+  height: 20px;
+  position: absolute;
+  right: 78px;
+  top: 7px;
+}
+
+.empty-basket {
+  padding: 7px 34px 7px 44px;
+  border-radius: 15px;
+}
+
+.basket a {
+  padding: 9.5px 16px 9.5px 44px;
+  border-radius: 15px;
+  background-color: rgba(248, 247, 244,0.99);
+}
+
+.order-button {
+ padding-left: 15px;
+ padding-right: 15px;
+}
+
+.login:hover .entrance {
+  background-color: #f8f7f4;
+  color: #323232;
+  border-radius: 15px;
+}
+
+.login:hover .entrance-span {
+  color: #323232;
+}
+
+.user-div {
+  display: none;
+  position: absolute;
+}
+
+.user-div p {
+  margin: 0 0 10px;
+}
+
+.login:hover  .user-div  {
+  display: block;
+}
+
+
+
+
+.user-search input::placeholder,
+.user input::placeholder  {
   font-size: 14px;
-  line-height: 24px;
   color:#999;
-} /* размер текста и цвет в формах (плейсхолдеры*/
+  font-weight: normal;
+} /* размер текста и цвет в формах плейсхолдеры не получается менять у */
 
 
 .user-div a {
   font-size: 13px;
-  line-height: 24px; /*ссылки забыли пароль и новая регистрация*/
+  line-height: 24px;
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(173,172,170,0.5);
 }
 
 
@@ -104,56 +354,29 @@ h1,
 .phone  {
   font-size: 22px;
   line-height: 24px;
-  font-weight: bold; /*телефон*/
+  font-weight: bold;
+}
+
+.user-search-div {
+  position: relative;
 }
 
 
-.site-navigation a:focus  {
-  background-color: #ededed;
-  box-shadow: inset 0px 2px 1px 0px #696969;
-  border-radius: 12px;
-  padding: 5px;
-}/*бекграунт нажатия главноеменю*/
+.search-popup {
+  display: none;
+  position: absolute;
+  padding: 20px 15px;
+  right: 0px;
+}
 
+.user-search-div:hover .search-popup  {
+  display: block;
+}
 
-.site-navigation a:hover  {
+.search-button:hover {
   background-color: #f8f7f4;
   color: #323232;
-  border-radius: 12px;
-  padding: 5px;/*наведение главное меню*/
 }
-
-
-.opener {
-  background-color: #d07058;
-  border-radius: 12px;
-  padding: 5px;
-}/*бекграунт находимся на странице каталога*/
-
-
-.submenu  {
-  background-color: #f8f7f4;
-  box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.40);
-}
-
-
-.submenu .active a  {
-  background-color: #d07058;
-  border-radius: 0px;/*бекграунт находимся на странице подменюб вышла из положения так, так как находится мы можем только на странице сливочное то класс эктив добавила ей и стилизовала*/
-}
-
-
-.submenu a:hover  {
-  background-color: #fbded7;
-  border-radius: 0px; /*бекграунт наведения подменю*/
-}
-
-.submenu a:focus  {
-  background-color: #f6b5a5;
-  border-radius: 0px;
-}
- /*бекграунт нажатия подменю*/
-
 
 
 .user-search,
@@ -163,7 +386,12 @@ h1,
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.40);
 }
 
-
+.user-div a:hover,
+.user-div a:active {
+  color: #e84d37;
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(232,77,55,0.3);
+}
 
 .basket a,
 .breadcrumbs,
@@ -172,7 +400,13 @@ h1,
 .fatness-type legend,
 .filler-type legend  {
   font-size: 14px;
-  line-height: 16px; /*корзина с товарами шрифт*/
+  line-height: 16px;
+}
+
+.basket a,
+.entrance-span,
+.basket-span {
+  font-weight: 500;
 }
 
 .basket-item  {
@@ -181,24 +415,39 @@ h1,
 }
 
 
+.basket-popup {
+  display: none;
+  position: absolute;
+}
+
+
+.basket:hover .basket-popup  {
+  display: block;
+}
+
+
+.basket a:hover {
+Background-color: #f8f7f4;
+color: #323232;
+}
+
+
 .basket-item span  {
-  color:#999; /*переопределяю цвет последней графы указала такой же как у плейсхолдеров*/
+  color:#999;
 }
 
 
 .basket-popup p  {
   font-size: 15px;
   line-height: 18px;
-  font-weight: bold; /* размер итого */
+  font-weight: bold;
 }
 
 
-.user button,
-.promo-item-1 a,
-.promo-item-2 a,
+.button-promo,
 .products-line-list button,
-.subscribe-gllacy button,
-.head-office a,
+.button-subscribe,
+.button-fbform,
 .feedback-button,
 .entrance-button,
 .order-button  {
@@ -206,52 +455,84 @@ h1,
   line-height: 24px;
   font-weight: bold;
   background-image: linear-gradient( 90deg, #e74a35 0%, #f26843 100%);
-   /*кнопки*/
-}
-
-
-
-
-.user button,
-.products-line-list button,
-.subscribe-gllacy button,
-.feedback-button,
-.order-button {
-  border:  none;
-  text-align: center;
-  vertical-align: middle;
-  border-color: #e74a35; /* нужен он или нет, не знаю зачем указала*/
-  border-radius: 20px;
-  padding: 5px 10px;
 }
 
 
 .order-button,
 .user button,
-.subscribe-gllacy button,
+.button-subscribe,
 .feedback-button,
 .order-button,
-.products-line-list button,
-.type button  {
+.button,
+.order-button  {
   color: #fff;
 }
 
-.promo-item-1 a,
-.promo-item-2 a,
-.subscribe-gllacy button,
-.head-office a,
+.button-promo,
+.button-subscribe,
+.button-fbform,
 .feedback-button,
 .slider-button   {
-  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64); /* тени от кнопок */
+  box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
 }
 
+.button-promo,
+.button-subscribe,
+.button-fbform,
+.feedback-button  {
+  border-radius: 20px;
+}
+
+
 .entrance-button,
-.products-line-list button,
-.basket-popup button {
+.button,
+.order-button {
   box-shadow: 0px 1px 2px 0px #ac1000;
 }
 
+.entrance-button {
+  border-radius: 16px;
+}
 
+.button {
+  border-radius: 21px;
+}
+
+.order-button {
+  border-radius: 18px;
+}
+
+.entrance-button:hover,
+.order-button:hover,
+.button-promo:hover,
+.button:hover,
+.button-subscribe:hover,
+.button-fbform:hover,
+.feedback-button:hover {
+  color: #ffffff;
+  background-image:
+    linear-gradient( to top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%),
+    linear-gradient( to top, #e74a35 0%, #f26843 100%);
+  box-shadow: 0px 1px 2px 0px #ac1000;
+}
+
+.entrance-button:active,
+.order-button:active,
+.button-promo:active,
+.button:active,
+.button-subscribe:active,
+.button-fbform:active,
+.feedback-button:active {
+ background-image:
+   linear-gradient( to top, rgba(0, 0, 0, 0.07) 0%, rgba(0, 0, 0, 0.07) 100%),
+   linear-gradient( to top, #e74a35 0%, #f26843 100%);
+  box-shadow: inset 0px 2px 2px 0px #942718;
+}
+
+.breadcrumbs a {
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(255,255,255,0.2);
+}
 /* шапка и некоторые общие элементы */
 
 
@@ -260,17 +541,28 @@ h1,
   font-size: 60px;
   line-height: 60.35px;
   font-weight: bold;
-  margin: 0;/*текст слайдера*/
+  margin: 0;
+  width: 700px; /*у мен 670*/
+  margin: 0 auto;
+  margin-bottom: 38px;
 }
 
 .slider-button  {
   font-size: 32px;
   line-height: 44px;
   font-weight: bold;
-  background-image: linear-gradient( 90deg, #e74a35 0%, #f26843 100%);
-  border-radius: 30px;
-  text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76); /*кнопка слайдера плюс тень от текста работает при всех состояниях плюс в фотошопе есть outer glow в эффектах текста в значении 34% опасити, что это такое?*/
+  background: #f26843;
+  background-image: linear-gradient(to top, #e74a35 0%, #f26843 100%);
+  text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 50px;
+  text-align: center;
+  vertical-align: top;
+  cursor: pointer;
 }
+
+
 
 .slider-slides a:hover  {
   color: #ffffff;
@@ -278,7 +570,7 @@ h1,
     linear-gradient( to top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%),
     linear-gradient( to top, #e74a35 0%, #f26843 100%);
   box-shadow: 0px 2px 2px 0px #ac1000;
-}/*бекграунт наведения кнопки слайдера*/
+}
 
 .slider-slides a:active {
   background-image:
@@ -286,33 +578,13 @@ h1,
     linear-gradient( to top, #e74a35 0%, #f26843 100%);
   box-shadow: inset 0px 2px 2px 0px #942718;
 }
- /*нажатие кнопки слайдера */
-
-.promo-item-1 a:hover,
-.promo-item-2 a:hover  {
-  color: #ffffff;
-  background-image:
-    linear-gradient( to top, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%),
-    linear-gradient( to top, #e74a35 0%, #f26843 100%);
-  box-shadow: 0px 1px 2px 0px #ac1000;
-}/*бекграунт наведения кнопки хочу малинки шоколадки*/
-
-.promo-item-1 a:active,
-.promo-item-2 a:active  {
- background-image:
-   linear-gradient( to top, rgba(0, 0, 0, 0.07) 0%, rgba(0, 0, 0, 0.07) 100%),
-   linear-gradient( to top, #e74a35 0%, #f26843 100%);
-  box-shadow: inset 0px 2px 2px 0px #942718;
-}
- /*нажатие кнопки хочу малинки шоколадки так надо стилизовать все кнопки сделаю*/
-
 
 
 .promo-item-1 h3,
 .promo-item-2 h3  {
   font-size: 35px;
   line-height: 41px;
-  font-weight: bold; /*заголовки промо малинка даром*/
+  font-weight: bold;
 }
 
 .promo-item-1  {
@@ -321,6 +593,7 @@ h1,
   border-radius: 15px;
   background-position: 0 0;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -330,45 +603,67 @@ h1,
   border-radius: 15px;
   background-position: 0 0;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .promo p  {
   font-size: 18px;
   line-height: 22px;
   font-weight: bold;
-} /*тест промо*/
+}
 
 
 .products-line-list h3  {
   font-size: 16px;
   line-height: 22px;
   font-weight: 500;
+  margin: 0;
+
+}
+
+.products-line-list a  {
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(255,255,255,0.2);
+}
+
+.products-line-list a:hover,
+.products-line-list a:active,
+.info-link a:hover,
+.info-linkt a:active {
+  color: #ffbc9e;
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(255,188,158,0.3);
 }
 
 
-.products-line-price  {
+.button {
+ padding-left: 20px;
+ padding-right: 20px;
+}
+
+.products-line-price {
   font-size: 45px;
   line-height: 45px;
   font-weight: bold;
   text-shadow: 0px 1px 3px rgba(49, 50, 53, 0.5);
-  margin: 0;/*цена мороженного шрифта*/
+  margin: 0;
 }
 
-.weight  {
+.weight {
   font-size: 30px;
   line-height: 45px;
-  font-weight: bold; /*цена спан кг размер шрифта*/
+  font-weight: bold;
 }
 
 
 h1,
-.blog-news a  {
+.blog-news a {
   font-size: 24px;
   line-height: 30px;
-  font-weight: 500;/*преимущества жирный текст и новое в нашем блоге*/
+  font-weight: 500;
 }
 
-.features  {
+.features {
   background-color: #ece1c9;
   background-image: url("../img/wafer.jpg");
   background-position: 0 0;
@@ -377,12 +672,17 @@ h1,
 }
 
 
-.blog-news a  {
+.blog-news a {
   font-weight: bold;
+  text-decoration: underline;
 }
 
+.blog-news a:hover,
+.blog-news a:active {
+  color: #e84d37;
+}
 
-.blog-news  {
+.blog-news {
   background-color: #fff;
   background-image: url("../img/strawberry.jpg");
   background-position: 173px -37px;
@@ -390,70 +690,96 @@ h1,
   border-radius: 15px;
 }
 
-.subscribe-gllacy label  {
-  color: #5a5a5a;/*подпишитесь на рассылку*/
+.subscribe-gllacy label {
+  color: #5a5a5a;
 }
 
+
+.button-subscribe {
+ padding-left: 19px;
+ padding-right: 19px;
+}
 
  .subscribe-gllacy input,
 .feedbackform input,
 .feedbackform textarea {
   font-size: 16px;
   line-height: 24px;
-  color: #999;/*подпишитесь на рассылку электроннная почта*/
+  color: #999;
 }
 
-.subscribe-form  {
+.subscribe-form {
   background-color: #f8f7f4;
   border-radius: 15px;/* почтовый фон градиент и бокс шадоу сделать им?*/
 }
 
 
-.head-office p  {
+.head-office p {
   font-size: 14px;
-  line-height: 20px;  /* адрес главного офиса текст */
+  line-height: 20px;
 }
 
-.head-office b  {
+.head-office b {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
 }
 
-.current-item  {
+.current-item {
   font-size: 35px;
   line-height: 41px;
-  font-weight: bold; /*сливочное мороженое*/
+  font-weight: bold;
+  margin: 0;
 }
 
 
 .fatness-type label,
 .filler-type label,
 .type button,
-.pagination-list  {
+.pagination-list {
   font-size: 16px;
   line-height: 18px;
 }
 
-.head-office  {
+.head-office {
   background-color: #fdfefe;
 }
 
-.feedbackform  {
+.feedbackform {
   background-color: #f8f7f4;
 }
+
+.feedbackform b {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+  .button-fbform {
+ padding-left: 23px;
+ padding-right: 23px;
+}
+
+
 
 /*мэйн*/
 
 
 
-.info-link li  {
+.info-link li {
   font-size: 13px;
   line-height: 18px;
 }
 
+
 .info-link li:first-child {
   font-weight: bold;
+}
+
+
+.info-link a,
+.htmlacademy-logo a {
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(255,255,255,0.2);
 }
 
 
@@ -463,89 +789,18 @@ h1,
 }
 
 
-.feedbackform b  {
-  font-size: 24px;
-  line-height: 28px;
+.htmlacademy-logo a:hover,
+.htmlacademy-logo a:active {
+  color: #ffbc9e;
+  border-bottom: 1px solid;
+  border-bottom-color: rgba(255,188,158,0.3);
 }
-
-
 /*подвал*/
 
 
 
 
-/*выпадающие меню*/
 
-.user-div {
-  display: none;
-}
-
-.user-div p {
-  margin: 0 0 10px;
-}
-
-.login:hover  .user-div  {
-  display: block;
-} /*выпадание входа все ок делали вместе на консультации */
-
-
-.site-navigation > li {
-    position: relative;
-}
-
-.submenu  {
-  position: absolute;
-  display: none;
-  top: 30%; /*ПОМЕНЯЛА ЧТОБЫ ПРЯМО ПОД МЕНЮ ОТКРЫВАЛСЯ*/
-  z-index:1;
-  margin-top: 5px;
-  left: 0;
-  width: 144px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  background: #fff;
-  border-radius: 10px;
-}
-
-
-.submenu a {
-  display: block; /*чтобы цвет по всей строке с пунктом*/
-}
-
-.submenu li a {
- padding: 10px 20px 10px 20px; /*некрасиво ползают слова и потрясываются при наведении. как бы слово выползает вперед и потому даже рамку загораживает и та становитс квадратной когда наводишь на первый пункт*/
-}
-
-
-.site-navigation > li:hover .submenu {
-    display: block;
-} /* выпадашка подменю*/
-
-
-.basket-popup {
-  display: none;
-  position: absolute;
-}
-
-
-.basket a:hover + .basket-popup  {
-  display: block;
-}
-
-.search-popup {
-  display: none;
-  margin: 0 0 10px 0;
-  padding: 0;
-  right: 150px;
-  position: absolute;
-}
-
-.search-button:hover + .search-popup  {
-  display: block;
-} /*выпадание поиска и корзины работает только с плюсом и не могу снова попасть в само окно наверно не допоняла. Может переделать эту часть и поставить поиск вход и корзину списком?*/
-
-/*выпадающие меню конец*/
 
 
 
@@ -560,28 +815,42 @@ h1,
   display:  flex;
 }
 
+.main-navigation img {
+  align-self: flex-start;
+}
+
 .site-navigation  {
-  display:  flex;
+  display: flex;
   margin: 0;
-  padding: 15px 0 0 0;
+  padding: 20px 0 0 0; /*по пикселям выходит 23 ДУМАЮ ЗАДАТЬ ПАДИНГ ВВЕРХУ БОДИ САМОМУ*/
 }
 
 .site-navigation>li {
-  padding: 0 0 0 25px;
+  padding: 0 0 0 0px; /*измеряла по пикселям*/
   margin: 0;
 }
 
 
-.flex-header-rigth {
-  display:  flex;
+.login,
+.empty-basket-div,
+.basket {
+  padding: 0 0 0 11px;/*по пикселям выходит 23*/
 }
 
 .form-wrapper  {
-  display:  flex;
-  padding: 15px 0 0 0;
+  display: flex;
   justify-content: space-between;
 }
 
+.contact  {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact p {
+  margin: 0;
+  text-align: right;
+}
 
 .breadcrumbs {
   display: flex;
@@ -610,7 +879,8 @@ h1,
 .promo {
   display: flex;
   justify-content: space-between;
-  margin: 0 0 37px 0;
+  margin: 0 0 40px 0;
+
 }
 
 .promo-item-1,
@@ -619,22 +889,23 @@ h1,
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .promo-item-1 h3,
 .promo-item-2 h3  {
-  margin: 20px 0 0 20px;
+  margin: 0;
 }
 
 .promo-item-1 p,
 .promo-item-2 p  {
-  margin: 20px 0 45px 20px;
+  margin: 0; /*СОМНЕВАЮСЬ насчет 45? так как там кнопка*/
 }
 
-.promo-item-1 a,
-.promo-item-2 a  {
+.button-promo  {
   align-self: flex-end;
-  margin: 0 35px 35px 0;
+  margin: 0;/* высота приблизительно должна быть 230 но у меня получилось на 18 больше*/
 }
 
 
@@ -643,6 +914,7 @@ h1,
 .products-line-list  {
   display:  flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 0;
 }
 
@@ -651,15 +923,15 @@ h1,
 }
 
 .products-line-list {
-  padding: 0;/*первая лишка очень большая пытаюсь избавится от этого, не выходит*/
-  margin: 0 0 37px 0;/*первая лишка очень большая пытаюсь избавится от этого, не выходит*/
+  padding: 0;
+  margin: 0 0 40px 0;
 }
 
 .products-line-list li {
   width: 22.2%; /*из ТЗ*/
   text-align: center;
-  padding: 0; /*первая лишка очень большая пытаюсь избавится от этого, не выходит*/
-  margin: 0; /*первая лишка очень большая пытаюсь избавится от этого, не выходит*/
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -668,7 +940,7 @@ h1,
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 0 37px 0;
+  margin: 0 0 40px 0;
 }
 
 .features-list li {
@@ -679,7 +951,7 @@ h1,
 .flex-col-news-subscribe {
   display: flex;
   justify-content: space-between;
-  margin: 0 0 37px 0;
+  margin: 0 0 40px 0;
 }
 
 .blog-news,
@@ -693,7 +965,7 @@ h1,
   width: 300px;
   border-radius: 15px;
   z-index: 1;
-  top: 3700px;/*потом передвину когда слайдер будет готов*/
+  top: 3700px;/*потом передвину когда слайдер будет готов родителя позиционировать релатив*/
   left: 850px;
   position: absolute;
  /* разобраться с модальным окном обратной связи и еще мороженое тоже туда*/
@@ -723,26 +995,40 @@ h1,
 .social-tw::before {
   content: url(../img/twitter.svg);
   border: 3px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%; /*обводку хочу задать контенту получается странно*/
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  border: 3px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 0.8;/*обводку хочу задать контенту получается странно*/
 }
+
 
 .social-insta::before {
   content: url(../img/instagram.svg);
   border: 3px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%; /*обводку хочу задать контенту получается странно*/
+  border-radius: 50%;
+  opacity: 0.8; /*обводку хочу задать контенту получается странно*/
 }
 
 .social-fb::before {
   content: url(../img/fb.svg);
   border: 3px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%; /*обводку хочу задать контенту получается странно*/
+  border-radius: 50%;
+  opacity: 0.8;/*обводку хочу задать контенту получается странно*/
 }
 
 
 .social-vk::before {
-  content: url(../img/vk.svg);
-  border: 3px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%; /*обводку хочу задать контенту получается странно*/
+  display: block;
+  content: url("../img/vk.svg");
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  opacity: 0.8;/*обводку хочу задать контенту получается странно И, можно сделать иконки как бекграунд имайдж?*/
+}
+
+.social a:hover {
+  opacity: 1;
 }
 
 
@@ -754,10 +1040,18 @@ h1,
 .info-link {
   padding: 0;
   margin: 0;
+  position: relative;
 }
 
 .info-link-1::before {
-  content: url(../img/heart.svg);
+  content: "";
+  position: absolute;
+  right: 170px;
+  width: 15px;
+  height: 13px;
+  background-image: url(../img/heart.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .copyright  {
@@ -766,4 +1060,101 @@ h1,
 }
 
 
+/* СЛАЙДЕР*/
 
+.site-wrapper {
+  min-width: 1200px;
+  background-color: #849d8f;
+  background-image: url("../img/1slide.png");
+  background-repeat: no-repeat;
+  background-position: top center;
+  transition: background-image 0.5s ease, background-color 0.5s ease;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 2.3%;
+}
+
+.slider {
+  position: relative;
+  padding-top: 321px; /*их данные*/
+  text-align: center;
+  color: #ffffff;
+}
+
+.slider-slides {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.slider-controls label {
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  margin-right: 8px;
+  vertical-align: top;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-controls {
+  position: absolute;
+  bottom: 63px;
+  left: 0;
+  z-index: 20;
+
+  font-size: 0;
+}
+
+.slide-1,
+.slide-2,
+.slide-3 {
+  display: none;
+}
+
+#btn-1:checked ~ .site-wrapper #slide1,
+#btn-2:checked ~ .site-wrapper #slide2,
+#btn-3:checked ~ .site-wrapper #slide3 {
+  display: block;
+}
+
+#btn-1:checked ~ .site-wrapper label[for="btn-1"],
+#btn-2:checked ~ .site-wrapper label[for="btn-2"],
+#btn-3:checked ~ .site-wrapper label[for="btn-3"] {
+  background-color: #ffffff;
+}
+
+
+#btn-1:checked ~ .site-wrapper {
+  background-color: #849d8f;
+  background-image: url("../img/1slide.png");
+}
+
+#btn-2:checked ~ .site-wrapper {
+  background-color: #8996a6;
+  background-image: url("../img/2slide.png");
+}
+
+#btn-3:checked ~ .site-wrapper {
+  background-color: #9d8b84;
+  background-image: url("../img/3slide.png");
+}
+
+.site-wrapper::before,
+.site-wrapper::after {
+  content: "";
+  visibility: hidden;
+}
+
+.site-wrapper::before {
+  background-image: url("../img/2slide.png");
+}
+
+.site-wrapper::after {
+  background-image: url("../img/3slide.png");
+}

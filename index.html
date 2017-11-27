@@ -8,13 +8,38 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
   <body>
+    <input class="visually-hidden" type="radio" id="btn-1" name="slider" checked>
+    <input class="visually-hidden" type="radio" id="btn-2" name="slider">
+    <input class="visually-hidden" type="radio" id="btn-3" name="slider">
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<symbol id="icon-entrance" viewBox="0 0 35 32">
+<title>entrance</title>
+<path d="M10.105 25.053l11.65-9.053-11.65-9.053v4.913h-10.176v8.281h10.176z"></path>
+<path d="M30.316 0h-21.895c-1.853 0-3.368 1.516-3.368 3.368v3.368h3.368v-3.368h21.895v25.263h-21.895v-3.368h-3.368v3.368c0 1.853 1.516 3.368 3.368 3.368h21.895c1.853 0 3.368-1.516 3.368-3.368v-25.263c0-1.853-1.516-3.368-3.368-3.368z"></path>
+</symbol>
+<symbol id="icon-loupe" viewBox="0 0 32 32">
+<title>loupe</title>
+<path class="icon icon-loupe" d="M31.921 29.227l-9.803-9.801c1.47-1.985 2.353-4.483 2.353-7.186 0-0.002 0-0.003 0-0.005v0c0-6.757-5.478-12.235-12.235-12.235s-12.235 5.478-12.235 12.235c0 6.757 5.478 12.235 12.235 12.235v0c0 0 0 0 0.001 0 2.72 0 5.232-0.892 7.258-2.4l-0.032 0.023 9.798 9.796 2.662-2.662zM12.235 20.706c-4.67 0-8.471-3.8-8.471-8.471s3.8-8.471 8.471-8.471 8.471 3.8 8.471 8.471-3.8 8.471-8.471 8.471z"></path>
+</symbol>
+<symbol id="icon-basket-red" viewBox="0 0 34 32">
+<title>basket-red</title>
+<path class="icon icon-basket-red" d="M9.421 6.45l1.654 14.35h16.72l1.882-14.35z"></path>
+<path class="icon icon-basket-red" d="M14.374 28.8c0 1.767-1.433 3.2-3.2 3.2s-3.2-1.433-3.2-3.2c0-1.767 1.433-3.2 3.2-3.2s3.2 1.433 3.2 3.2z"></path>
+<path class="icon icon-basket-red" d="M28.774 28.8c0 1.767-1.433 3.2-3.2 3.2s-3.2-1.433-3.2-3.2c0-1.767 1.433-3.2 3.2-3.2s3.2 1.433 3.2 3.2z"></path>
+<path class="icon icon-basket-red" d="M9.051 3.25l-0.376-3.25h-8.675v3.2h5.824l2.4 20.8h22.381l2.718-20.75h-24.272zM27.795 20.8h-16.72l-1.654-14.35h20.256l-1.882 14.35z"></path>
+</symbol>
+</defs>
+</svg>
+    <div class="site-wrapper">
+    <div class="container">
     <header class="main-header">
 
       <nav class="main-navigation">
         <img src="img/logo.svg" width="154" height="64" alt="Логотип магазина Глейси">
           <ul class="site-navigation">
              <li>
-              <a href="catalog.html">Каталог</a>
+              <a class="catalog-link" href="catalog.html">Каталог</a>
                 <ul class="submenu">
 				  <li><a class="site-navigation-news" href="#catalog.html">Новинки</a></li>
                   <li><a href="catalog.html">Сливочное</a></li>
@@ -23,15 +48,15 @@
                   <li><a href="#catalog.html">Мелорин</a></li>
                 </ul>
               </li>
-              <li><a href="#">Доставка и отплата</a></li>
-              <li><a href="#">О Компании</a></li>
+              <li><a class="delivery-link" href="#">Доставка и отплата</a></li>
+              <li><a class="companyinfo-link" href="#">О Компании</a></li>
           </ul>
       </nav>
 
       <div class="flex-header-right">
       <div class="form-wrapper"><!--как-то переназвать-->
         <div class="user-search-div">
-          <a class="search-button" href="#"><img src="img/loupe.svg" width="17" height="17" alt="Найти"></a>
+          <a class="search-button" href="#"><svg class="icon icon-loupe"><use xlink:href="#icon-loupe"></use></svg></a>
           <div class="search-popup">
           <form class="user-search" method="post" action="https://echo.htmlacademy.ru">
           <input id="searchbox" type="search" name="search" placeholder="Что ищем">
@@ -40,7 +65,7 @@
           </div>
         </div>
         <div class="login">
-        <a class="entance" href="#"><img src="img/entrance.svg" width="21" height="19" alt="Вход"><span class="entance-span">Вход</span></a>
+        <a class="entrance" href="#"><svg class="icon icon-entrance"><use xlink:href="#icon-entrance"></use></svg><span class="entrance-span">Вход</span></a>
         <div class="user-div">
         <form class="user" method="post" action="https://echo.htmlacademy.ru">
           <p>
@@ -59,8 +84,8 @@
               <a href="#">Новая регистрация</a>
         </div>
         </div>
-        <div class="empty-basket-div>">
-         <button type="button" class="empty-basket"><img src="img/basket.svg" width="21" height="20" alt="Пустая корзина"><span class="basket-span">Пусто</span></button>
+        <div class="empty-basket-div">
+         <button type="button" class="empty-basket"><svg class="icon icon-basket-red"><use xlink:href="#icon-basket-red"></use></svg><span class="basket-span">Пусто</span></button>
           </div>
       </div>
       <div class="contact">
@@ -68,48 +93,43 @@
       </div>
       </div>
     </header>
-    <main class="container">
+    <main class="container-box">
 		<section class="slider">
 			<h2 class="visually-hidden">Промофото нашего магазина мороженого</h2>
-                <input type="radio" id="btn-1" name="slider" checked>
-                <input type="radio" id="btn-2" name="slider">
-                <input type="radio" id="btn-3" name="slider">
+
                 <div class="slider-controls">
                     <label for="btn-1">Слайд 1</label>
                     <label for="btn-2">Слайд 2</label>
                     <label for="btn-3">Слайд 3</label>
                 </div>
-                <div class="slider-inner">
-                    <div class="slider-slides">
-                        <div class="slide-1">
-							<img src="img/1slide.png" width="647" height="584" alt="Мороженое крем-брюле и пломбира с малиновым джемом."> <!--смущает разный размер мороженых для слайдов что с этим делать-->
-						    <p>Крем-брюле и пломбир<br>с малиновым джемом</p>
-							<a class="slider-button" href="#">Давайте оба!</a>
-                         </div>
-                        <div class="slide-2">
-							<img src="img/2slide.png" width="644" height="582" alt="Мороженое крем-брюле и пломбир с малиновым джемом.">
-						    <p>Шоколадный пломбир<br>и лимонный сорбет</p>
-							<a class="slider-button" href="#">Давайте оба!</a>
-                         </div>
-                        <div class="slide-3">
-							<img src="img/3slide.png" width="639" height="582" alt="Мороженое пломбир с помадкой и клубничного щербета."> <!--мне не нравитс альт потому что читалка прочтет ссылку и такая же фраза будет в описании фото. может поставить альт пустым? это касается всех списков мороженого с фото-->
-						    <p>Пломбир с помадкой<br>и клубничный щербет</p>
-							<a class="slider-button" href="#">Давайте оба!</a>
-                         </div>
-                    </div>
-                </div>
+
+                  <ul class="slider-slides">
+                    <li class="slide-1" id="slide1">
+				    <p>Крем-брюле и пломбир<br>с малиновым джемом</p>
+					<a class="slider-button" href="#">Давайте оба!</a>
+                    </li>
+                    <li class="slide-2" id="slide2">
+				    <p>Шоколадный пломбир<br>и лимонный сорбет</p>
+					<a class="slider-button" href="#">Давайте оба!</a>
+                    </li>
+                    <li class="slide-3" id="slide3">
+					<p>Пломбир с помадкой<br>и клубничный щербет</p>
+					<a class="slider-button" href="#">Давайте оба!</a>
+                    </li>
+                  </ul>
+
             </section>
       <section class="promo">
 		  <h2 class="visually-hidden">Промоакции нашего магазина</h2>
           <div class="promo-item-1">
             <h3>Малинка даром!</h3>
             <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-            <a class="button" href="#">Хочу варенья!</a>
+            <a class="button-promo" href="#">Хочу варенья!</a>
           </div>
           <div class="promo-item-2">
             <h3>Шоколадки даром!</h3>
             <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-            <a class="button" href="#">Хочу шоколадки!</a>
+            <a class="button-promo" href="#">Хочу шоколадки!</a>
           </div>
       </section>
       <section class="products-line">
@@ -165,8 +185,8 @@
                </p>
                <p>
                  <input type="email" name="email" id="subscribe" placeholder="Электронная почта">
-                 <button class="button" type="submit">Отправить</button>
-               </p> <!-- поставила фразу с предложением подписки как подпись к форме-->
+                 <button class="button-subscribe" type="submit">Отправить</button>
+               </p>
                </form>
         </section>
         </div>
@@ -176,7 +196,7 @@
          <div class="head-office">
            <p>Адрес главного офиса<br>и офлайн-магазина:<b>ул. Большая Конюшенная 19/8, Санкт-Петербург</b></p>
            <p>Для заказов по телефону:<b>8 812 450-25-25</b>(с 10 до 20 ежедневно)</p>
-           <a class="button" href="#">Форма обратной связи</a>
+           <a class="button-fbform" href="#">Форма обратной связи</a>
           </div>
            <div class="feedbackform">
              <h2 class="visually-hidden">Напишите нам</h2>
@@ -227,6 +247,7 @@
            <span class="htmlacademy-logo">Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss">HTML Academy</a> © 2017</span>
          </section>
     </footer>
-	  <!--смущает каскад, некрасивый, смущает выбор уровней заголовков, наверное придется добавлять некоторым элементам классы-->
+    </div>
+    </div>
   </body>
 </html>
