@@ -9,16 +9,8 @@ body  {
   background-color: #849d8f;
   background-position: center top;
   background-repeat: no-repeat;
-  width: 1200px; /* поставить у хедера футера и мейна*/
 }
 
-header.main-header,
-main.container,
-main.catalog-container,
-footer.main-footer {
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .visually-hidden:not(:focus):not(:active),
 input[type="checkbox"].visually-hidden,
@@ -109,7 +101,8 @@ img {
 
 .catalog-link,
 .delivery-link,
-.companyinfo-link {
+.companyinfo-link,
+.type-button {
   display: inline-block;
   font-size: 16px;
   line-height: 18px;
@@ -117,9 +110,11 @@ img {
   color: #fff;
   text-align: center;
   vertical-align: middle;
-  border-bottom: 1px solid;
+  padding: 7px 14px 7px 14px;
+  text-decoration: underline;
+  /*border-bottom: 1px solid;
   border-bottom-color: rgba(255,255,255,0.2);
-  padding: 7px 14px; /*но подчеркивание соответственно получается очень далеко от слов А ЕСЛИ СНИЗУ ЗАДАТЬ МАРДЖИН, раньше падинг был в ховере и прыгали слова*/
+  /*но подчеркивание соответственно получается очень далеко от слов , раньше падинг был в ховере и прыгали слова*/
 
 }
 
@@ -129,6 +124,7 @@ img {
 }
 
 .contact p,
+.contact-catalog p,
 .submenu a,
 .basket-span,
 .entrance-span  {
@@ -137,18 +133,19 @@ img {
   color: #fff;
 }
 
-.user-search-div a,
+.user-search-box a,
 .entrance,
 .empty-basket,
 .sort-type select,
 .fatness-type,
-.filler-type  {
+.filler-type,
+.type-button {
   background-color: rgba(255, 255, 255,0.2);
 }
 
 
 .submenu a,
-.user-div a,
+.user-box a,
 .basket a,
 .basket-item,
 .basket-popup p,
@@ -163,7 +160,8 @@ h1,
 
 
 .submenu li:first-child,
-.contact p  {
+.contact p,
+.contact-catalog p {
   font-weight: bold;
 }
 
@@ -182,14 +180,14 @@ h1,
 .companyinfo-link:focus  {
   background-color: #ededed;
   box-shadow: inset 0px 2px 1px 0px #696969;
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 7px 14px;
 }
 
 .site-navigation a:hover  {
   background-color: #f8f7f4;
   color: #323232;
-  border-radius: 14px;
+  border-radius: 16px;
 }
 
 
@@ -202,11 +200,11 @@ h1,
 .submenu  {
   position: absolute;
   display: none;
-  top: 10%;
+  top: 100%;
   z-index:1;
   margin-top: 5px;
-  left: 60px;
-  width: 144px;
+  left: 210px;
+  width: 143px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -230,7 +228,7 @@ h1,
 
 .opener {
   background-color: #d07058;
-  border-radius: 14px;
+  border-radius: 16px;
   padding: 7px 14px;
   display: inline-block;
   font-size: 16px;
@@ -261,45 +259,62 @@ h1,
 
 .search-button {
   border-radius: 50%;
-  padding: 18px;
+  padding: 15px;
 }
 
 a.entrance {
-  padding: 7px 16px 7px 44px;
-  border-radius: 15px;
+  padding: 5px 16px 6px 44px;
+  border-radius: 16px;
 }
 
 .icon-entrance {
   width: 21px;
   height: 19px;
   position: absolute;
-  right: 50px;
+  right: 56px;
+  bottom: 6px;
+}
+
+a.entrance .icon {
+    fill: #fff;
+}
+
+a.entrance:hover .icon {
+    fill: #000;
 }
 
 .icon-loupe {
   width: 17px;
   height: 17px;
   position: absolute;
-  right: 10px;
-  bottom: 10px;
+  right: 9px;
+  bottom: 4px;
 }
 
 .icon-basket-red {
   width: 21px;
   height: 20px;
   position: absolute;
-  right: 78px;
+  right: 81px;
   top: 7px;
 }
 
 .empty-basket {
-  padding: 7px 34px 7px 44px;
-  border-radius: 15px;
+  padding: 6px 34px 6px 44px;
+  border-radius: 16px;
+}
+
+.basket {
+  pointer-events: none;
+}
+
+.basket.active {
+  pointer-events: auto;
 }
 
 .basket a {
-  padding: 9.5px 16px 9.5px 44px;
-  border-radius: 15px;
+  padding: 9px 16px 9px 44px; /*ПО фотошопу верхний и нижний падинги 8пх*/
+  border-radius: 16px;
   background-color: rgba(248, 247, 244,0.99);
 }
 
@@ -311,23 +326,29 @@ a.entrance {
 .login:hover .entrance {
   background-color: #f8f7f4;
   color: #323232;
-  border-radius: 15px;
+  border-radius: 16px;
 }
 
 .login:hover .entrance-span {
   color: #323232;
 }
 
-.user-div {
+.user-box {
   display: none;
   position: absolute;
+  box-sizing: border-box;
+  padding: 20px 19px;
+  border-radius: 4px;
+  width: 277px;
+  right: 186px;
+  z-index: 1;
 }
 
-.user-div p {
+.user-box p {
   margin: 0 0 10px;
 }
 
-.login:hover  .user-div  {
+.login:hover  .user-box  {
   display: block;
 }
 
@@ -342,7 +363,7 @@ a.entrance {
 } /* размер текста и цвет в формах плейсхолдеры не получается менять у */
 
 
-.user-div a {
+.user-box a {
   font-size: 13px;
   line-height: 24px;
   border-bottom: 1px solid;
@@ -357,7 +378,7 @@ a.entrance {
   font-weight: bold;
 }
 
-.user-search-div {
+.user-search-box {
   position: relative;
 }
 
@@ -365,11 +386,12 @@ a.entrance {
 .search-popup {
   display: none;
   position: absolute;
-  padding: 20px 15px;
+  padding: 20px 15px; /*почему-то не работает*/
   right: 0px;
+  background-color: aqua;
 }
 
-.user-search-div:hover .search-popup  {
+.user-search-box:hover .search-popup  {
   display: block;
 }
 
@@ -378,16 +400,23 @@ a.entrance {
   color: #323232;
 }
 
+.search-button .icon-loupe {
+  fill: #fff;
+}
+
+.search-button:hover .icon-loupe {
+  fill: #000;
+}
 
 .user-search,
-.user-div,
+.user-box,
 .basket-popup  {
   background-color: #f8f7f4;
   box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.40);
 }
 
-.user-div a:hover,
-.user-div a:active {
+.user-box a:hover,
+.user-box a:active {
   color: #e84d37;
   border-bottom: 1px solid;
   border-bottom-color: rgba(232,77,55,0.3);
@@ -420,6 +449,21 @@ a.entrance {
   position: absolute;
 }
 
+.basket .bg-icon-basket-red {
+  fill:transparent;
+}
+.basket .icon-basket-red {
+  fill:#fff;
+}
+
+.basket.active .bg-icon-basket-red,
+.basket:hover .bg-icon-basket-red {
+  fill:#e84d37;
+}
+.basket.active .icon-basket-red,
+.basket:hover .icon-basket-red {
+  fill:#343434;
+}
 
 .basket:hover .basket-popup  {
   display: block;
@@ -445,7 +489,7 @@ color: #323232;
 
 
 .button-promo,
-.products-line-list button,
+.button,
 .button-subscribe,
 .button-fbform,
 .feedback-button,
@@ -454,7 +498,7 @@ color: #323232;
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
-  background-image: linear-gradient( 90deg, #e74a35 0%, #f26843 100%);
+  background-image: linear-gradient( to top, #e74a35 0%, #f26843 100%);
 }
 
 
@@ -476,13 +520,16 @@ color: #323232;
   box-shadow: 0px 2px 2px 0px rgba(172, 16, 0, 0.64);
 }
 
-.button-promo,
-.button-subscribe,
-.button-fbform,
-.feedback-button  {
-  border-radius: 20px;
+
+.button,
+.button-fbform {
+  border-radius: 16px/22px;
 }
 
+.button-subscribe,
+.feedback-button  {
+  border-radius: 20px/22px;
+}
 
 .entrance-button,
 .button,
@@ -491,15 +538,15 @@ color: #323232;
 }
 
 .entrance-button {
-  border-radius: 16px;
+  border-radius: 16px/24px;
 }
 
-.button {
-  border-radius: 21px;
+.button-promo {
+  border-radius: 23px;
 }
 
 .order-button {
-  border-radius: 18px;
+  border-radius: 19px/22px;
 }
 
 .entrance-button:hover,
@@ -523,7 +570,7 @@ color: #323232;
 .button-subscribe:active,
 .button-fbform:active,
 .feedback-button:active {
- background-image:
+  background-image:
    linear-gradient( to top, rgba(0, 0, 0, 0.07) 0%, rgba(0, 0, 0, 0.07) 100%),
    linear-gradient( to top, #e74a35 0%, #f26843 100%);
   box-shadow: inset 0px 2px 2px 0px #942718;
@@ -536,15 +583,20 @@ color: #323232;
 /* шапка и некоторые общие элементы */
 
 
+.sort-type,
+.fatness-type,
+.filler-type {
+ border-radius: 19px;
+}
 
 .slider-slides p  {
   font-size: 60px;
   line-height: 60.35px;
   font-weight: bold;
   margin: 0;
-  width: 700px; /*у мен 670*/
+  width: 700px; /*у меня 670 специально задано больше*/
   margin: 0 auto;
-  margin-bottom: 38px;
+  margin-bottom: 30px; /*нам нужно четко 40*/
 }
 
 .slider-button  {
@@ -556,7 +608,7 @@ color: #323232;
   text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
   padding-left: 40px;
   padding-right: 40px;
-  border-radius: 50px;
+  border-radius: 32px;
   text-align: center;
   vertical-align: top;
   cursor: pointer;
@@ -589,9 +641,9 @@ color: #323232;
 
 .promo-item-1  {
   background-color: #b73b60;
-  background-image: url("../img/rastberry.jpg");
-  border-radius: 15px;
-  background-position: 0 0;
+  background-image: url("../img/rastberry2.jpg");
+  border-radius: 11px;
+  background-position: 0px -60px;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -599,8 +651,8 @@ color: #323232;
 
 .promo-item-2  {
   background-color: #421e0b;
-  background-image: url("../img/shokko.jpg");
-  border-radius: 15px;
+  background-image: url("../img/shokko2.jpg");
+  border-radius: 11px;
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -668,7 +720,9 @@ h1,
   background-image: url("../img/wafer.jpg");
   background-position: 0 0;
   background-repeat: repeat;
-  border-radius: 15px;
+  border-radius: 11px;
+  padding: 30px 21px;
+  margin: 0 0 40px 0;
 }
 
 
@@ -687,7 +741,7 @@ h1,
   background-image: url("../img/strawberry.jpg");
   background-position: 173px -37px;
   background-repeat: no-repeat;
-  border-radius: 15px;
+  border-radius: 11px;
 }
 
 .subscribe-gllacy label {
@@ -710,13 +764,15 @@ h1,
 
 .subscribe-form {
   background-color: #f8f7f4;
-  border-radius: 15px;/* почтовый фон градиент и бокс шадоу сделать им?*/
+  border-radius: 11px;
+  padding: 33px 20px;/* почтовый фон градиент и бокс шадоу сделать им?*/
 }
 
 
 .head-office p {
   font-size: 14px;
   line-height: 20px;
+  margin: 0;
 }
 
 .head-office b {
@@ -747,6 +803,11 @@ h1,
 
 .feedbackform {
   background-color: #f8f7f4;
+  box-sizing: border-box;
+  padding: 21px 24px;
+  border-radius: 11px;
+  width: 477px;
+  box-sizing: border-box;
 }
 
 .feedbackform b {
@@ -807,9 +868,16 @@ h1,
 
 /*сетки начало потом перенесу по соответствующим разделам*/
 .main-header  {
+  padding: 9px 0 0 0;
+}
+
+.flex-header-first-catalog {
   display:  flex;
   justify-content: space-between;
+  padding: 0 0 0 0;
+  align-items: flex-start;
 }
+
 
 .main-navigation {
   display:  flex;
@@ -822,24 +890,31 @@ h1,
 .site-navigation  {
   display: flex;
   margin: 0;
-  padding: 20px 0 0 0; /*по пикселям выходит 23 ДУМАЮ ЗАДАТЬ ПАДИНГ ВВЕРХУ БОДИ САМОМУ*/
+  padding: 13px 0 0 0;
+  align-items: stretch;
+  align-content: stretch;
+
 }
 
 .site-navigation>li {
-  padding: 0 0 0 0px; /*измеряла по пикселям*/
+  padding: 0;
   margin: 0;
+  position: relative;
 }
 
 
 .login,
-.empty-basket-div,
+.empty-basket-box,
 .basket {
-  padding: 0 0 0 11px;/*по пикселям выходит 23*/
+  padding: 0 0 0 10px;
 }
 
 .form-wrapper  {
   display: flex;
   justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+  padding: 13px 0 0 0;
 }
 
 .contact  {
@@ -847,14 +922,30 @@ h1,
   justify-content: flex-end;
 }
 
-.contact p {
+.contact p,
+.contact-catalog p {
   margin: 0;
   text-align: right;
+}
+
+.flex-breadcrumbs {
+  display: flex;
+  padding: 0;
+  order: 1;
 }
 
 .breadcrumbs {
   display: flex;
   padding: 0;
+}
+
+.flex-header-catalog {
+  display:flex;
+  justify-content: space-between;
+}
+
+.contact-catalog {
+  order: 2;
 }
 
 .breadcrumbs li:first-child::after,
@@ -889,23 +980,23 @@ h1,
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20px;
+  padding: 17px 18px 17px 17px;
   box-sizing: border-box;
 }
 
 .promo-item-1 h3,
 .promo-item-2 h3  {
-  margin: 0;
+  margin: 0 0 15px 0;
 }
 
 .promo-item-1 p,
 .promo-item-2 p  {
-  margin: 0; /*СОМНЕВАЮСЬ насчет 45? так как там кнопка*/
+  margin: 0 0 45px 0;
 }
 
 .button-promo  {
   align-self: flex-end;
-  margin: 0;/* высота приблизительно должна быть 230 но у меня получилось на 18 больше*/
+  margin: 0;
 }
 
 
@@ -934,13 +1025,16 @@ h1,
   margin: 0;
 }
 
-
+h1 {
+  margin: 0;
+}
 
 .features-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 0 0 40px 0;
+  margin: 0;
+  padding: 0;
 }
 
 .features-list li {
@@ -957,22 +1051,38 @@ h1,
 .blog-news,
 .subscribe-form {
   width: 560px;
+  box-sizing: border-box;
 }
 
+.blog-news {
+  padding: 27px 20px;
+}
 
+.blog-news h3 {
+  margin: 0;
+}
+
+.subscribe-form p {
+  margin: 0;
+}
 
 .head-office  {
   width: 300px;
-  border-radius: 15px;
+  border-radius: 11px;
   z-index: 1;
-  top: 3700px;/*потом передвину когда слайдер будет готов родителя позиционировать релатив*/
+  top: 1950px;/*потом передвину когда слайдер будет готов родителя позиционировать релатив*/
   left: 850px;
   position: absolute;
+  padding: 33px 25px;
  /* разобраться с модальным окном обратной связи и еще мороженое тоже туда*/
 }
 
 .map {
   z-index: 2;
+}
+
+.contacts {
+  margin: 0 0 40px 0;
 }
 
 .pagination-list {
@@ -995,7 +1105,6 @@ h1,
 .social-tw::before {
   content: url(../img/twitter.svg);
   border: 3px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
   width: 32px;
   height: 32px;
   border: 3px solid rgba(255, 255, 255, 0.5);
@@ -1063,7 +1172,6 @@ h1,
 /* СЛАЙДЕР*/
 
 .site-wrapper {
-  min-width: 1200px;
   background-color: #849d8f;
   background-image: url("../img/1slide.png");
   background-repeat: no-repeat;
@@ -1071,20 +1179,23 @@ h1,
   transition: background-image 0.5s ease, background-color 0.5s ease;
 }
 
-.container {
-  margin: 0 auto;
-  padding: 0 2.3%;
+.container,
+.container-box-catalog {
+  padding: 0 27px;
+  width: 1146px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .slider {
   position: relative;
-  padding-top: 321px; /*их данные*/
+  padding-top: 280px; /*их данные*/
   text-align: center;
   color: #ffffff;
 }
 
 .slider-slides {
-  margin: 0;
+  margin: 0 0 40px 0;
   padding: 0;
 
   list-style: none;
@@ -1104,10 +1215,9 @@ h1,
 
 .slider-controls {
   position: absolute;
-  bottom: 63px;
+  bottom: 20px;
   left: 0;
   z-index: 20;
-
   font-size: 0;
 }
 
@@ -1158,3 +1268,12 @@ h1,
 .site-wrapper::after {
   background-image: url("../img/3slide.png");
 }
+
+.slider-controls label:hover {
+  background-color: rgba(248, 247, 244,0.4);
+}
+
+.gllacy-logo {
+    align-self: flex-start;
+    margin-right: 8px;
+  }
