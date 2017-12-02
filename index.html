@@ -36,10 +36,10 @@
               <a class="catalog-link" href="catalog.html">Каталог</a>
                 <ul class="submenu">
 				  <li><a class="site-navigation-news" href="#catalog.html">Новинки</a></li>
-                  <li><a href="catalog.html">Сливочное</a></li>
-                  <li><a href="#catalog.html">Щербеты</a></li>
-                  <li><a href="#catalog.htmll">Фруктовый лед</a></li>
-                  <li><a href="#catalog.html">Мелорин</a></li>
+                  <li><a class="site-navigation-submenu" href="catalog.html">Сливочное</a></li>
+                  <li><a class="site-navigation-submenu-sorbet" href="#catalog.html">Щербеты</a></li>
+                  <li><a class="site-navigation-submenu-ice" href="#catalog.htmll">Фруктовый лед</a></li>
+                  <li><a class="site-navigation-submenu-last" href="#catalog.html">Мелорин</a></li>
                 </ul>
               </li>
               <li><a class="delivery-link" href="#">Доставка и оплата</a></li>
@@ -53,12 +53,10 @@
         <div class="user-search-box">
           <a class="search-button" href="#"><svg class="icon icon-loupe"><use xlink:href="#icon-loupe"></use></svg></a>
           <div class="search-popup">
-            <div>
           <form class="user-search" method="post" action="https://echo.htmlacademy.ru">
-          <input id="searchbox" type="search" name="search" placeholder="Что ищем">
+          <input id="searchbox" type="search" name="search" placeholder="Что ищем?">
           <label class="visually-hidden">Пожалуйста, укажите, что будем искать</label>
           </form>
-              </div>
           </div>
         </div>
         <div class="login">
@@ -73,10 +71,13 @@
             <input id="user-password" type="password" name="password" placeholder="Пароль">
             <label for="user-password" class="visually-hidden">Введите пароль</label>
           </p>
-
+          <div class="vertical-center">
             <button class="entrance-button" type="submit">Войти</button>
-           <a href="#">Забыли пароль</a><br>
+            <div>
+              <a href="#">Забыли пароль</a><br>
               <a href="#">Новая регистрация</a>
+            </div>
+          </div>
         </form>
 
         </div>
@@ -94,10 +95,10 @@
         </div>
       </div>
       </div>
-      <div class="flex-header-right">
-      <div class="contact">
-        <p>С 10 до 20 ежедневно<br><a class="phone" href="tel:8-812-450-25-25">8 812 450-25-25</a></p>
-      </div>
+      <div class="flex-header-catalog">
+        <div class="contact-catalog">
+          <p><span class="time">С 10 до 20 ежедневно</span><a class="phone" href="tel:8-812-450-25-25">8 812 450-25-25</a></p>
+        </div>
       </div>
     </header>
     <main class="container-box">
@@ -142,29 +143,46 @@
       <section class="products-line">
 	    <h2 class="visually-hidden">Хиты продаж нашего магазина мороженого Глейси</h2>
 		  <ul class="products-line-list">
-		    <li>
+		    <li class="product-item-hit">
+              <a class="product-link">
               <img src="img/product1-1.jpg" width="267" height="267" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
-              <h3><a href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
-              <p class="products-line-price">310₽<span class="weight">/кг</span></p>
+              <h3><a class="item-link" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a></h3>
+              <p class="products-line-price">310 ₽<span class="weight">/кг</span></p>
+              <div class="product-item-hover">
               <button class="button" type="button">Быстрый просмотр</button>
+              </div>
+              </a>
             </li>
-            <li>
-              <img src="img/product2-1.jpg" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
-              <h3><a href="#">Сливочно-кофейное с кусочками шоколада</a></h3>
-              <p class="products-line-price">380 ₽<span class="weight">/кг</span></p>
-              <button class="button" type="button">Быстрый просмотр</button>
+            <li class="product-item-hit">
+              <a class="product-link">
+          <img src="img/product2-1.jpg" width="267" height="267" alt="Сливочно-кофейное с кусочками шоколада">
+          <h3><a class="item-link" href="#">Сливочно-кофейное с кусочками шоколада</a></h3>
+          <p class="products-line-price">380 ₽<span class="weight">/кг</span></p>
+          <div class="product-item-hover">
+          <button class="button" type="button">Быстрый просмотр</button>
+          </div>
+          </a>
             </li>
-            <li>
-              <img src="img/product3-1.jpg" width="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
-              <h3><a href="#">Сливочно-клубничное с присыпкой из белого шоколада</a></h3>
-              <p class="products-line-price">355 ₽<span class="weight">/кг</span></p>
-              <button class="button" type="button">Быстрый просмотр</button>
-            </li>
-            <li>
-              <img src="img/product4-1.jpg" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
-              <h3><a href="#">Сливочное крем-брюле с карамельной подливкой</a></h3>
-              <p class="products-line-price">415 ₽<span class="weight">/кг</span></p>
-              <button class="button" type="button">Быстрый просмотр</button>
+            <li class="product-item-hit">
+
+          <a class="product-link">
+          <img src="img/product3-1.jpg" width="267" height="267" alt="Сливочно-клубничное с присыпкой из белого шоколада">
+          <h3><a class="item-link" href="#">Сливочно-клубничное с присыпкой из белого шоколада</a></h3>
+          <p class="products-line-price">355 ₽<span class="weight">/кг</span></p>
+          <div class="product-item-hover">
+          <button class="button" type="button">Быстрый просмотр</button>
+          </div>
+         </a>
+        </li>
+            <li class="product-item-hit">
+             <a class="product-link">
+          <img src="img/product4-1.jpg" width="267" height="267" alt="Сливочное крем-брюле с карамельной подливкой">
+          <h3><a class="item-link" href="#">Сливочное крем-брюле с карамельной подливкой</a></h3>
+          <p class="products-line-price">415 ₽<span class="weight">/кг</span></p>
+           <div class="product-item-hover">
+          <button class="button" type="button">Быстрый просмотр</button>
+          </div>
+          </a>
             </li>
 		  </ul>
       </section>
@@ -185,6 +203,7 @@
         </section>
 
         <section class="subscribe-form">
+          <div class="subscribe-form-inner">
 			   <h3 class="visually-hidden">Подписка на рассылку магазина мороженого Глейси</h3>
 			   <form class="subscribe-gllacy" action="https://echo.htmlacademy.ru" method="post">
                <p>
@@ -195,6 +214,7 @@
                  <button class="button-subscribe" type="submit">Отправить</button>
                </p>
                </form>
+            </div>
         </section>
         </div>
 

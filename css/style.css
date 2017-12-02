@@ -52,7 +52,7 @@ img {
 
 .entrance-button,
 .slider-button,
-.empty-basket,
+.basket a,
 .button,
 .button-promo,
 .button-subscribe,
@@ -69,8 +69,8 @@ img {
 
 .search-button,
 .entrance,
-.empty-basket,
-.basket a {
+.basket a,
+.basket.active a {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
@@ -78,8 +78,7 @@ img {
 }
 
 
-.entrance-button,
-.slider-button,
+
 .button,
 .button-promo,
 .button-subscribe,
@@ -90,9 +89,9 @@ img {
   padding-bottom: 10px;
 }
 
-.entrance-button,
+
 .button-promo {
- padding-left: 25px;
+ padding-left: 24px;
  padding-right: 25px;
 }
 
@@ -112,6 +111,7 @@ img {
   vertical-align: middle;
   padding: 7px 14px 7px 14px;
   text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.2);
   /*border-bottom: 1px solid;
   border-bottom-color: rgba(255,255,255,0.2);
   /*но подчеркивание соответственно получается очень далеко от слов , раньше падинг был в ховере и прыгали слова*/
@@ -123,8 +123,7 @@ img {
   border-bottom-color: rgba(209,208,206,0.2);
 }
 
-.contact p,
-.contact-catalog p,
+.time,
 .submenu a,
 .basket-span,
 .entrance-span  {
@@ -135,7 +134,7 @@ img {
 
 .user-search-box a,
 .entrance,
-.empty-basket,
+.basket a,
 .sort-type select,
 .fatness-type,
 .filler-type,
@@ -160,9 +159,13 @@ h1,
 
 
 .submenu li:first-child,
-.contact p,
-.contact-catalog p {
+.time {
   font-weight: bold;
+}
+
+.time {
+  display: block;
+  margin-bottom: 3px;
 }
 
 .submenu li:first-child>a {
@@ -182,6 +185,7 @@ h1,
   box-shadow: inset 0px 2px 1px 0px #696969;
   border-radius: 16px;
   padding: 7px 14px;
+  text-decoration: none;
 }
 
 .site-navigation a:hover  {
@@ -200,10 +204,10 @@ h1,
 .submenu  {
   position: absolute;
   display: none;
-  top: 100%;
+  top: 70%;
   z-index:1;
   margin-top: 5px;
-  left: 210px;
+  left: -5px;
   width: 143px;
   margin: 0;
   padding: 0;
@@ -217,10 +221,25 @@ h1,
   display: block;
 }
 
-.submenu li a {
- padding: 10px 20px;
+.site-navigation-news {
+  padding: 9px 10px 10px 20px;
 }
 
+.site-navigation-submenu {
+  padding: 10px 10px 8px 20px;
+}
+
+.site-navigation-submenu-sorbet {
+  padding: 8px 10px 8px 20px;
+}
+
+.site-navigation-submenu-ice {
+  padding: 7px 10px 8px 20px;
+}
+
+.site-navigation-submenu-last {
+  padding: 6px 10px 14px 20px;
+}
 
 .site-navigation > li:hover .submenu {
     display: block;
@@ -259,11 +278,12 @@ h1,
 
 .search-button {
   border-radius: 50%;
-  padding: 15px;
+  padding: 16px;
+  margin-bottom: 4px;
 }
 
 a.entrance {
-  padding: 5px 16px 6px 44px;
+  padding: 4px 15px 6px 45px;
   border-radius: 16px;
 }
 
@@ -271,24 +291,16 @@ a.entrance {
   width: 21px;
   height: 19px;
   position: absolute;
-  right: 56px;
+  right: 55px;
   bottom: 6px;
-}
-
-a.entrance .icon {
-    fill: #fff;
-}
-
-a.entrance:hover .icon {
-    fill: #000;
 }
 
 .icon-loupe {
   width: 17px;
   height: 17px;
   position: absolute;
-  right: 9px;
-  bottom: 4px;
+  right: 7px;
+  bottom: 7px;
 }
 
 .icon-basket-red {
@@ -299,9 +311,10 @@ a.entrance:hover .icon {
   top: 7px;
 }
 
-.empty-basket {
-  padding: 6px 34px 6px 44px;
+.basket a {
+  padding: 8px 35px 8px 45px;
   border-radius: 16px;
+  color: #fff;
 }
 
 .basket {
@@ -312,10 +325,11 @@ a.entrance:hover .icon {
   pointer-events: auto;
 }
 
-.basket a {
+.basket.active a {
   padding: 9px 16px 9px 44px; /*ПО фотошопу верхний и нижний падинги 8пх*/
   border-radius: 16px;
   background-color: rgba(248, 247, 244,0.99);
+  color: #000;
 }
 
 .order-button {
@@ -337,10 +351,11 @@ a.entrance:hover .icon {
   display: none;
   position: absolute;
   box-sizing: border-box;
-  padding: 20px 19px;
+  padding: 19px 16px 19px 19px;
   border-radius: 4px;
   width: 277px;
-  right: 186px;
+  right: 0;
+  top: 100%;
   z-index: 1;
 }
 
@@ -353,14 +368,52 @@ a.entrance:hover .icon {
 }
 
 
+a.entrance .icon {
+    fill: #fff;
+}
 
+.login:hover .icon {
+    fill: #000;
+}
 
-.user-search input::placeholder,
-.user input::placeholder  {
+.vertical-center {
+  display: flex;
+  align-items: center;
+}
+
+.user-search input[type="search"]  {
+  font: inherit;
   font-size: 14px;
   color:#999;
   font-weight: normal;
-} /* размер текста и цвет в формах плейсхолдеры не получается менять у */
+  box-sizing: border-box;
+  width: 311px;
+  padding: 10px 10px 12px 13px;
+  border-radius: 5px;
+  border: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d3d3d2;
+  height: 44px;
+}
+
+.user input[type="text"],
+.user input[type="password"] {
+  font: inherit;
+  font-size: 14px;
+  color:#999;
+  font-weight: normal;
+  box-sizing: border-box;
+  width: 242px;
+  padding: 9px 10px 10px 14px;
+  border-radius: 5px;
+  border: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d3d3d2;
+  margin: 0 0 10px 0;
+}
+
 
 
 .user-box a {
@@ -372,7 +425,7 @@ a.entrance:hover .icon {
 
 
 
-.phone  {
+.phone {
   font-size: 22px;
   line-height: 24px;
   font-weight: bold;
@@ -386,16 +439,20 @@ a.entrance:hover .icon {
 .search-popup {
   display: none;
   position: absolute;
-  padding: 20px 15px; /*почему-то не работает*/
+  padding:  20px 15px;
   right: 0px;
-  background-color: aqua;
+  top: 100%;
+  border-radius: 4px;
+  width: 340px;
+  box-sizing: border-box;
+  z-index: 1;
 }
 
 .user-search-box:hover .search-popup  {
   display: block;
 }
 
-.search-button:hover {
+.user-search-box:hover .search-button {
   background-color: #f8f7f4;
   color: #323232;
 }
@@ -404,11 +461,11 @@ a.entrance:hover .icon {
   fill: #fff;
 }
 
-.search-button:hover .icon-loupe {
+.user-search-box:hover .icon-loupe {
   fill: #000;
 }
 
-.user-search,
+.search-popup,
 .user-box,
 .basket-popup  {
   background-color: #f8f7f4;
@@ -447,6 +504,8 @@ a.entrance:hover .icon {
 .basket-popup {
   display: none;
   position: absolute;
+  top: 100%;
+  right: 0;
 }
 
 .basket .bg-icon-basket-red {
@@ -538,7 +597,9 @@ color: #323232;
 }
 
 .entrance-button {
-  border-radius: 16px/24px;
+  border-radius: 16px/23px;
+  padding: 12px 25px 10px 25px;
+  margin-right: 20px;
 }
 
 .button-promo {
@@ -594,9 +655,9 @@ color: #323232;
   line-height: 60.35px;
   font-weight: bold;
   margin: 0;
-  width: 700px; /*у меня 670 специально задано больше*/
+  width: 700px;
   margin: 0 auto;
-  margin-bottom: 30px; /*нам нужно четко 40*/
+  margin-bottom: 30px;
 }
 
 .slider-button  {
@@ -608,6 +669,8 @@ color: #323232;
   text-shadow: 0px 2px 5px rgba(160, 32, 11, 0.76);
   padding-left: 40px;
   padding-right: 40px;
+  padding-top: 9px;
+  padding-bottom: 11px;
   border-radius: 32px;
   text-align: center;
   vertical-align: top;
@@ -641,9 +704,9 @@ color: #323232;
 
 .promo-item-1  {
   background-color: #b73b60;
-  background-image: url("../img/rastberry2.jpg");
-  border-radius: 11px;
-  background-position: 0px -60px;
+  background-image: url("../img/rastberry.jpg");
+  border-radius: 14px;
+  background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -651,8 +714,8 @@ color: #323232;
 
 .promo-item-2  {
   background-color: #421e0b;
-  background-image: url("../img/shokko2.jpg");
-  border-radius: 11px;
+  background-image: url("../img/shokko.jpg");
+  border-radius: 14px;
   background-position: 0 0;
   background-repeat: no-repeat;
   background-size: cover;
@@ -665,21 +728,18 @@ color: #323232;
 }
 
 
-.products-line-list h3  {
+.item-link  {
   font-size: 16px;
   line-height: 22px;
   font-weight: 500;
   margin: 0;
-
-}
-
-.products-line-list a  {
   border-bottom: 1px solid;
   border-bottom-color: rgba(255,255,255,0.2);
+
 }
 
-.products-line-list a:hover,
-.products-line-list a:active,
+
+
 .info-link a:hover,
 .info-linkt a:active {
   color: #ffbc9e;
@@ -699,6 +759,9 @@ color: #323232;
   font-weight: bold;
   text-shadow: 0px 1px 3px rgba(49, 50, 53, 0.5);
   margin: 0;
+  position:absolute;
+  bottom: 60px;
+  left: 0;
 }
 
 .weight {
@@ -720,7 +783,7 @@ h1,
   background-image: url("../img/wafer.jpg");
   background-position: 0 0;
   background-repeat: repeat;
-  border-radius: 11px;
+  border-radius: 14px;
   padding: 30px 21px;
   margin: 0 0 40px 0;
 }
@@ -741,7 +804,7 @@ h1,
   background-image: url("../img/strawberry.jpg");
   background-position: 173px -37px;
   background-repeat: no-repeat;
-  border-radius: 11px;
+  border-radius: 14px;
 }
 
 .subscribe-gllacy label {
@@ -763,10 +826,25 @@ h1,
 }
 
 .subscribe-form {
-  background-color: #f8f7f4;
-  border-radius: 11px;
-  padding: 33px 20px;/* почтовый фон градиент и бокс шадоу сделать им?*/
+  border-radius: 14px;
+  padding: 5px;
+  background-color: #92cdff;
+  background: url("../img/bg-post.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
+
+
+.subscribe-form-inner {
+  background-color: #f8f7f4;
+  border: 5px solid transparent;
+  border-radius: 14px;
+  padding: 30px 20px 25px 30px;
+  background-clip: padding-box;
+}
+
+
 
 
 .head-office p {
@@ -805,7 +883,7 @@ h1,
   background-color: #f8f7f4;
   box-sizing: border-box;
   padding: 21px 24px;
-  border-radius: 11px;
+  border-radius: 14px;
   width: 477px;
   box-sizing: border-box;
 }
@@ -904,10 +982,14 @@ h1,
 
 
 .login,
-.empty-basket-box,
-.basket {
-  padding: 0 0 0 10px;
+.basket,
+.basket.active,
+.user-search-box {
+  padding: 0 0 0 0;
+  margin: 0 0 0 10px;
+  position: relative;
 }
+
 
 .form-wrapper  {
   display: flex;
@@ -917,21 +999,16 @@ h1,
   padding: 13px 0 0 0;
 }
 
-.contact  {
-  display: flex;
-  justify-content: flex-end;
-}
 
-.contact p,
+
 .contact-catalog p {
-  margin: 0;
   text-align: right;
+  margin: 0;
 }
 
 .flex-breadcrumbs {
   display: flex;
   padding: 0;
-  order: 1;
 }
 
 .breadcrumbs {
@@ -939,13 +1016,15 @@ h1,
   padding: 0;
 }
 
-.flex-header-catalog {
+/*.flex-header-catalog {
   display:flex;
   justify-content: space-between;
-}
+  padding-top: 5px;
+}*/
 
 .contact-catalog {
-  order: 2;
+  margin-top: -16px;
+  margin-left: 780px;
 }
 
 .breadcrumbs li:first-child::after,
@@ -980,7 +1059,7 @@ h1,
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 17px 18px 17px 17px;
+  padding: 17px 18px 25px 19px;
   box-sizing: border-box;
 }
 
@@ -1018,11 +1097,12 @@ h1,
   margin: 0 0 40px 0;
 }
 
-.products-line-list li {
+.product-item-hit,
+.product-item {
   width: 22.2%; /*из ТЗ*/
   text-align: center;
   padding: 0;
-  margin: 0;
+  margin: 0 0 28px 0;
 }
 
 h1 {
@@ -1068,7 +1148,7 @@ h1 {
 
 .head-office  {
   width: 300px;
-  border-radius: 11px;
+  border-radius: 14px;
   z-index: 1;
   top: 1950px;/*потом передвину когда слайдер будет готов родителя позиционировать релатив*/
   left: 850px;
@@ -1168,7 +1248,10 @@ h1 {
   flex-direction: column;
 }
 
-
+.map {
+  display: block;
+  width: 100%;
+}
 /* СЛАЙДЕР*/
 
 .site-wrapper {
@@ -1189,7 +1272,7 @@ h1 {
 
 .slider {
   position: relative;
-  padding-top: 280px; /*их данные*/
+  padding-top: 276px;
   text-align: center;
   color: #ffffff;
 }
@@ -1277,3 +1360,55 @@ h1 {
     align-self: flex-start;
     margin-right: 8px;
   }
+
+
+
+
+
+.product-item,
+.product-item-hit {
+  position: relative;
+}
+
+
+.product-item-hit:before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  left: 8px;
+  display: inline-block;
+  width: 61px;
+  height: 61px;
+  background-image: url("../img/hit.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+.product-item-hover {
+  	display: none;
+	box-sizing: border-box;
+	position: absolute;
+	padding: 6px 13px 20px 13px;
+	top: -6px;
+	left: -19px;
+	width: 293px;
+  	height: 405px;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.2);
+	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+	z-index: 5;
+}
+
+.product-item:hover .product-item-hover,
+.product-item-hit:hover .product-item-hover {
+  display: inline-block;
+  display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+
