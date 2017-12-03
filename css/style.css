@@ -754,13 +754,13 @@ color: #323232;
 }
 
 .products-line-price {
+  position:absolute;
   font-size: 45px;
   line-height: 45px;
   font-weight: bold;
   text-shadow: 0px 1px 3px rgba(49, 50, 53, 0.5);
   margin: 0;
-  position:absolute;
-  bottom: 60px;
+  bottom: 90px;
   left: 0;
 }
 
@@ -778,15 +778,66 @@ h1,
   font-weight: 500;
 }
 
+
+h1 {
+  margin: 0 0 20px 0;
+}
+
 .features {
   background-color: #ece1c9;
   background-image: url("../img/wafer.jpg");
   background-position: 0 0;
   background-repeat: repeat;
   border-radius: 14px;
-  padding: 30px 21px;
+  padding: 24px 20px;
   margin: 0 0 40px 0;
 }
+
+.features-list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.features-list li {
+  box-sizing: border-box;
+  width: 540px;
+  padding: 0 0 0 57px;
+  flex-shrink: 1.3;
+}
+
+.features-list li:not(.eco):not(.thermometer) {
+  margin: 0 0 22px 0;
+}
+
+.features-item img {
+  position: absolute;
+}
+
+.ice-cream img {
+  left: 0px;
+  top: 8px;
+}
+
+.eco img {
+  left: 0px;
+  top: 96px;
+}
+
+.cow img {
+  left: 564px;
+  top: 8px;
+}
+
+
+.thermometer img {
+  left: 564px;
+  top: 96px;
+}
+
 
 
 .blog-news a {
@@ -811,12 +862,6 @@ h1,
   color: #5a5a5a;
 }
 
-
-.button-subscribe {
- padding-left: 19px;
- padding-right: 19px;
-}
-
  .subscribe-gllacy input,
 .feedbackform input,
 .feedbackform textarea {
@@ -824,6 +869,27 @@ h1,
   line-height: 24px;
   color: #999;
 }
+
+.subscribe-gllacy input[type="email"]  {
+  font: inherit;
+  box-sizing: border-box;
+  width: 368px;
+  padding: 10px 10px 12px 13px;
+  border-radius: 5px;
+  border: none;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d3d3d2;
+  height: 44px;
+  margin-right: 7px;
+}
+
+.button-subscribe {
+ padding-left: 19px;
+ padding-right: 19px;
+}
+
+
 
 .subscribe-form {
   border-radius: 14px;
@@ -840,7 +906,7 @@ h1,
   background-color: #f8f7f4;
   border: 5px solid transparent;
   border-radius: 14px;
-  padding: 30px 20px 25px 30px;
+  padding: 23px 7px 25px 15px;
   background-clip: padding-box;
 }
 
@@ -1094,32 +1160,62 @@ h1,
 
 .products-line-list {
   padding: 0;
-  margin: 0 0 40px 0;
+  margin: 0 0 19px 0;
 }
 
 .product-item-hit,
 .product-item {
+  position: relative;
   width: 22.2%; /*из ТЗ*/
   text-align: center;
   padding: 0;
-  margin: 0 0 28px 0;
+  margin: 0 0 0;
 }
 
-h1 {
-  margin: 0;
+
+.product-item-hit:before {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 8px;
+  left: 8px;
+  display: inline-block;
+  width: 61px;
+  height: 61px;
+  background-image: url("../img/hit.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-.features-list {
+
+.product-item-hover {
+  	display: none;
+	box-sizing: border-box;
+	position: absolute;
+	padding: 6px 13px 20px 13px;
+	top: -6px;
+	left: -19px;
+	width: 293px;
+  	height: 405px;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.2);
+	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
+	z-index: 5;
+}
+
+.product-item:hover .product-item-hover,
+.product-item-hit:hover .product-item-hover {
+  display: inline-block;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 0;
-  padding: 0;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.features-list li {
-  width: 540px;
-}
+
+
+
+
 
 
 .flex-col-news-subscribe {
@@ -1135,14 +1231,20 @@ h1 {
 }
 
 .blog-news {
-  padding: 27px 20px;
+  padding: 23px 19px 87px 19px; /*если будет больше надпись то будет некрасиво из-за падинга*/
 }
 
 .blog-news h3 {
+  font-size: 16px;
+  line-height: 22px;
   margin: 0;
 }
 
-.subscribe-form p {
+.subscribe-form p:not(.subscribe-input) {
+  margin: 0 0 36px 0;
+}
+
+.subscribe-input {
   margin: 0;
 }
 
@@ -1364,51 +1466,6 @@ h1 {
 
 
 
-
-.product-item,
-.product-item-hit {
-  position: relative;
-}
-
-
-.product-item-hit:before {
-  content: "";
-  position: absolute;
-  z-index: 3;
-  top: 8px;
-  left: 8px;
-  display: inline-block;
-  width: 61px;
-  height: 61px;
-  background-image: url("../img/hit.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-
-.product-item-hover {
-  	display: none;
-	box-sizing: border-box;
-	position: absolute;
-	padding: 6px 13px 20px 13px;
-	top: -6px;
-	left: -19px;
-	width: 293px;
-  	height: 405px;
-	border-radius: 5px;
-	background-color: rgba(255, 255, 255, 0.2);
-	box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.4);
-	z-index: 5;
-}
-
-.product-item:hover .product-item-hover,
-.product-item-hit:hover .product-item-hover {
-  display: inline-block;
-  display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-}
 
 
 
