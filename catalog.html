@@ -159,37 +159,40 @@
 		      </select>
 		  </fieldset>
 		  <fieldset class="price-type">
-					<legend class="price-box">Цена: 100 руб. - 500 руб.</legend>
-            <label for="check-1">
-    <input id="check-1" type="checkbox">
-    <span class="fake-input"></span>
-    <span class="fake-label">Label text</span>
-</label>
-
-
-
-           <div>
-             <div>
-             </div>
-             <div>
-             </div>
-             <div>
-             </div>
-             <div>
-             </div>
-            </div>
+					<legend class="price-box">Цена: 100 руб. -  500 руб.</legend>
+            <div class="range-controls">
+        <div class="scale">
+          <div class="bar" style="margin-left: 17%; width: 55%"></div>
+        </div>
+        <div class="range-toggle range-toggle-min"></div>
+        <div class="range-toggle range-toggle-max"></div>
+      </div>
 				</fieldset>
 				<fieldset class="fatness-type">
 					<legend class="fatness-box">Жирность:</legend>
                   <div>
-                  	<input type="radio" id="fatness-1" name="fatness">
-                    <label for="fatness-1">0%</label>
-				    <input type="radio" id="fatness-2" name="fatness" checked>
-                    <label for="fatness-2">до 10%</label>
-					<input type="radio" id="fatness-3" name="fatness">
-                    <label for="fatness-3">до 30%</label>
-					<input type="radio" id="fatness-4" name="fatness">
-                    <label for="fatness-4">выше 30%</label>
+                    <label class="fatness">
+                      <input class="visually-hidden" type="radio" name="fatness">
+                      <span class="radio-mark"></span>
+                      <span class="fatness-label">0%</span>
+                    </label>
+
+                    <label class="fatness">
+                      <input class="visually-hidden" type="radio" name="fatness" checked>
+                      <span class="radio-mark"></span>
+                      <span class="fatness-label">до 10%</span>
+                    </label>
+
+                    <label class="fatness">
+                      <input class="visually-hidden" type="radio" name="fatness">
+                      <span class="radio-mark"></span>
+                      <span class="fatness-label">до 30%</span>
+                    </label>
+                    <label class="fatness">
+                      <input class="visually-hidden" type="radio" name="fatness">
+                      <span class="radio-mark"></span>
+                      <span class="fatness-label">выше 30%</span>
+                    </label>
                     </div>
 				</fieldset>
           </div>
@@ -197,21 +200,31 @@
                 <fieldset class="filler-type">
 					<legend class="filler-box">Наполнители:</legend>
                   <div>
-                    <input class="visually-hidden" type="checkbox" id="filler-1" name="filler" checked>
-                    <span class="checkbox-mark-on"></span>
-                    <label for="filler-1">шоколадные</label>
-					<input class="visually-hidden" type="checkbox" id="filler-2" name="filler" checked>
-                    <span class="checkbox-mark-on"></span>
-                    <label for="filler-2">сахарные присыпки</label>
-					<input class="visually-hidden" type="checkbox" id="filler-3" name="filler">
-                    <span class="checkbox-mark"></span>
-                    <label for="filler-3">фрукты</label>
-					<input class="visually-hidden" type="checkbox" id="filler-4" name="filler">
-                    <span class="checkbox-mark"></span>
-                    <label class="filler" for="filler-4">сиропы</label>
-					<input class="visually-hidden" type="checkbox" id="filler-5" name="filler">
-                    <span class="checkbox-mark"></span>
-                    <label for="filler-5">джемы</label>
+                    <label class="filler">
+                      <input class="visually-hidden" type="checkbox" name="filler" checked>
+                      <span class="checkbox-mark"></span>
+                      <span class="filler-label">шоколадные</span>
+                    </label>
+                    <label class="filler">
+                      <input class="visually-hidden" type="checkbox" name="filler" checked>
+                      <span class="checkbox-mark"></span>
+                      <span class="filler-label">сахарные присыпки</span>
+                    </label>
+                    <label class="filler">
+                      <input class="visually-hidden" type="checkbox" name="filler">
+                      <span class="checkbox-mark"></span>
+                      <span class="filler-label">фрукты</span>
+                    </label>
+                    <label class="filler">
+                      <input class="visually-hidden" type="checkbox" name="filler">
+                      <span class="checkbox-mark"></span>
+                      <span class="filler-label">сиропы</span>
+                    </label>
+                    <label class="filler">
+                      <input class="visually-hidden" type="checkbox" name="filler">
+                      <span class="checkbox-mark"></span>
+                      <span class="filler-label">джемы</span>
+                    </label>
                   </div>
 				</fieldset>
 				<button type="submit" class="type-button">Применить</button>
@@ -263,7 +276,7 @@
         <li class="product-item">
            <a class="product-link" href="#">
           <img src="img/product1-2.jpg" width="267" height="267" alt="Сливочное с брусничным джемом"></a>
-          <h3><a class="item-link" href="#">Сливочное с брусничным<br> джемом</a></h3>
+          <h3><a class="item-link" href="#">Сливочное с брусничным джемом</a></h3>
           <p class="products-line-price">325 ₽<span class="weight">/кг</span></p>
           <div class="product-item-hover">
           <button class="button" type="button">Быстрый просмотр</button>
@@ -334,15 +347,17 @@
          </li>
       </ul>
     </section>
+      <div class="splitter">
       <ul class="pagination-list">
-         <li class="pagination-prev"><a href="#">&lt;</a></li>
-         <li class="pagination-item-current"><a><span class="pagination-current">1</span></a></li>
+         <li class="pagination-prev"><a href="#"></a></li>
+         <li class="pagination-item-current"><span class="pagination-current">1</span></li>
          <li class="pagination-item"><a href="#">2</a></li>
          <li class="pagination-item"><a href="#">3</a></li>
          <li class="pagination-item"><a href="#">4</a></li>
          <li class="pagination-item"><a href="#">5</a></li>
-         <li class="pagination-next"><a href="#">&gt;</a></li>
+         <li class="pagination-next"><a href="#"></a></li>
       </ul>
+      </div>
     </main>
     <footer class="main-footer">
         <section class="media">

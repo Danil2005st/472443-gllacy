@@ -168,6 +168,7 @@ img {
 .entrance,
 .basket a {
  background-color: rgba(255,255,255,0.2);
+ outline: none;
 }
 
 
@@ -209,12 +210,15 @@ h1,
 
 .catalog-link:hover,
 .delivery-link:hover,
-.companyinfo-link:hover {
+.companyinfo-link:hover,
+.site-navigation li:hover .catalog-link {
   background-color: #f8f7f4;
   color: #323232;
   border-radius: 16px;
   outline: none;
 }
+
+
 
 
 .catalog-link:focus,
@@ -313,7 +317,7 @@ h1,
 }
 
 
-.submenu a:hover  {
+.submenu a:hover {
   background-color: #fbded7;
   border-radius: 0px;
 }
@@ -492,7 +496,7 @@ a.entrance .icon {
   border-radius: 5px;
   border: none;
   border-style: solid;
-  border-width: 1px;
+  border-width: 2px;
   border-color: #d3d3d2;
   height: 44px;
 }
@@ -513,20 +517,23 @@ a.entrance .icon {
   border-width: 1px;
   border-color: #d3d3d2;
   margin: 0 0 10px 0;
+  font-weight: 700;
 }
 
 
 .user input[type="text"]:hover,
 .user input[type="password"]:hover,
 .user-search input[type="search"]:hover {
-  border: 2px solid #c7c6c5;
+  border: 1px solid #c7c6c5;
+  box-shadow:inset 0 0 0 1px #c7c6c5;
 }
 
 
 .user input[type="text"]:focus,
 .user input[type="password"]:focus,
 .user-search input[type="search"]:focus {
-  border: 2px solid #8fbdec;
+  border: 1px solid #8fbdec;
+  box-shadow:inset 0 0 0 1px #8fbdec;
   outline: none;
 }
 
@@ -570,7 +577,7 @@ a.entrance .icon {
 
 
 .user-search-box:hover .search-button,
-.user-search-box:focus .search-button {
+.search-button:focus {
   background-color: #f8f7f4;
   color: #323232;
 }
@@ -621,7 +628,7 @@ a.entrance .icon {
 
 .basket-item  {
   font-size: 13px;
-  line-height: 24px;
+  line-height: 16px;
 }
 
 .login,
@@ -657,13 +664,13 @@ a.entrance .icon {
 
 
 .basket-popup {
-  /*display: none;*/
+  display: none;
   position: absolute;
   box-sizing: border-box;
   top: 100%;
   right: 0;
   width: 540px;
-  padding: 15px 15px 15px 8px;
+  padding: 15px 12px 20px 8px;
   border-radius: 4px;
 }
 
@@ -676,36 +683,36 @@ a.entrance .icon {
 
 
 .basket-item {
-border: 1px solid black;
-
   border-collapse: collapse;
   border-spacing: 0;
+  border-bottom: 1px solid #cacac7;
 }
 
 
-.basket-item tr {
-border: 1px solid black;
-}
 
 .basket-item td {
-  vertical-align: center;
+  vertical-align: top;
 }
 
 .basket-item-delete {
   width: 26px;
+  padding: 13px 0;
 }
 
 .basket-item-img {
   width: 49px;
+  padding:5px 0 0 6px;
 }
 
 .main-cell {
   width: 225px;
+  padding: 13px 15px 22px 0px;
 }
 
 .basket-price,
 .total-sum {
- width: 100px;
+  width: 100px;
+  padding: 13px 0 0 0;
 }
 
 
@@ -752,6 +759,7 @@ border: 1px solid black;
   line-height: 18px;
   font-weight: bold;
   text-align: right;
+  margin: 12px 0 13px 0;
 }
 
 
@@ -822,7 +830,7 @@ border: 1px solid black;
 
 .order-button {
   border-radius: 19px/22px;
-  margin-left: 345px;
+  margin-left: 348px;
   cursor: pointer;
 }
 
@@ -1208,7 +1216,7 @@ border: 1px solid black;
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 0;
-  margin: 0 0 21px 0;
+  margin: 0 0 40px 0;
 }
 
 
@@ -1590,7 +1598,7 @@ h1 {
   text-align: center;
   vertical-align: middle;
   border: 2px solid #fbfcfb;
-  margin: 15px; /* dvigat*/
+  margin: 22px 15px -2px 15px;
   padding: 3px 28px 3px 28px;
   border-color: #fff;
   border-radius: 20px;
@@ -1619,9 +1627,11 @@ h1 {
 .price-type {
   border: none;
   padding: 0;
-  margin: 0;
 }
 
+.sort-type {
+  margin:0 14px 0 0;
+}
 
 .sort-box {
   font-size: 14px;
@@ -1641,20 +1651,10 @@ h1 {
   line-height: 18px;
   font-weight: 500;
   color: #fff;
-}
-
-
-.sort-select::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 20px;
-  height: 20px;
   background-image: url(../img/select-arrow.svg);
-  background-position: center center;
-  background-size: contain;
   background-repeat: no-repeat;
-  z-index: 1;/* не вставляет псевдоэлементы*/
+  background-position: center right 2px;
+  background-size: 20px;
 }
 
 
@@ -1663,64 +1663,192 @@ h1 {
 }
 
 
+.price-box {
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0 0 6px 16px;
+}
+
+
+.price-type {
+margin:  0 13px 0 0;
+}
+
+
+.range-controls {
+  position: relative;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 17px 22px 16px 23px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+.range-controls .scale {
+  height: 4px;
+  background: rgba(248, 247, 244, 0.5);
+  width: 175px;
+}
+
+
+.range-controls .bar {
+  height: 4px;
+  background: #f8f7f4;
+}
+
+
+.range-toggle {
+  position: absolute;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  background: #ababab;
+  border-radius: 50%;
+  border: 8px solid #fff;
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  cursor: pointer;
+}
+
+.range-toggle:hover {
+  box-shadow: 0 0 0 1px #fff;
+}
+
+
+.range-toggle-min {
+  left: 35px;
+}
+
+
+.range-toggle-max {
+  left: 61%;
+}
+
+
 .fatness-box {
   font-size: 14px;
   line-height: 16px;
-  margin: 0 0 6px 0;
+  margin: 0 0 6px 14px;
 }
 
 
 .fatness-type div {
   background-color: rgba(255, 255, 255, 0.2);
-  padding: 7px 3px;
+  padding: 7px 0 7px 15px;
   border-radius: 20px;
+  display: flex;
+}
+
+
+.radio-mark {
+  display: inline-block;
+  width: 24px;
+  height: 22px;
+  background-image: url(../img/radio-off.svg);
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+}
+
+
+input[type="radio"]:checked+.radio-mark{
+  background-image: url(../img/radio-on.svg);
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+input[type="radio"]:hover+.radio-mark{
+  opacity: 1;
+}
+
+
+input[type="radio"]:disable+.radio-mark{
+  opacity: 0.4;
+}
+
+
+.fatness:hover+.radio-mark,
+.fatness-type label:focus .radio-mark  {
+  opacity: 1;
+}
+
+
+.fatness:hover+.radio-mark  {
+  opacity: 0.5;
 }
 
 
 .filler-box {
   font-size: 14px;
   line-height: 16px;
-  margin: 0 0 6px 15px;
+  margin: 0 0 6px 13px;
+}
+
+
+.fatness {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 19px 0 0;
+}
+
+
+.fatness-label {
+  margin: 0 0 0 6px;
 }
 
 
 .filler-type div {
   background-color: rgba(255, 255, 255, 0.2);
-  padding: 4px 11px 7px 14px;
+  padding:  8px 0 8px 14px;
   border-radius: 20px;
   cursor: pointer;
+  display: flex;
 }
 
 
-.filler-type label {
+.filler {
   font-size: 16px;
   line-height: 18px;
+  margin: 0 18px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 23px 0 0;
+}
+
+
+.filler-label {
+  margin: 0 0 0 6px;
 }
 
 
 .checkbox-mark {
   display: inline-block;
-  width: 20px;
+  width: 24px;
   height: 20px;
   background-image: url(../img/checkbox-off.svg);
-  background-position: center center;
-  background-size: contain;
+  background-size: 20px 20px;
   background-repeat: no-repeat;
   opacity: 0.8;
-  margin: 5px 9px 0 0;
 }
 
 
-.checkbox-mark-on{
-  display: inline-block;
-  width: 20px;
-  height: 20px;
+input[type="checkbox"]:checked+.checkbox-mark{
   background-image: url(../img/checkbox-on.svg);
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: 0.8;
-  margin: 5px 9px 0 0;
+}
+
+input[type="checkbox"]:hover+.checkbox-mark{
+  opacity: 1;
+}
+
+input[type="checkbox"]:disable+.checkbox-mark{
+  opacity: 0.4;
 }
 
 .filler:hover+.checkbox-mark,
@@ -1730,34 +1858,6 @@ h1 {
 
 filler:hover+.checkbox-mark {
   opacity: 0.5;
-}
-
-/*
-.filler-box {
-  position: relative;
-}
-
-.filler-box label::before {
-  content: "";
-display: block;
-width: 224px;
-height: 2243px;
-position: absolute;
-left: 0;
-top: 123px;
-background-image: url("../img/checkbox-off.svg");
-background-repeat: no-repeat;
-background-position:center;
-background-size: contain;
-opacity: 0.8;
-}
-*/
-
-
-.price-box {
-  font-size: 14px;
-  line-height: 16px;
-  margin: 0 0 6px 0;
 }
 
 
@@ -1889,32 +1989,40 @@ opacity: 0.8;
 .pagination-list {
   display: flex;
   justify-content: flex-end;
-  margin: 0;
+  margin: 0 0 26px 0;
   padding: 0;
 }
 
 
+.splitter {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin: 0 0 19px 0;
+}
+
 .pagination-prev,
+.pagination-item-current,
 .pagination-item {
   margin-right: 5px;
 }
+
+
 .pagination-current {
-  display: block; /* не выравнивается*/
+  display: block;
+  color: #323232;
+  background-color: #fff;
 }
 
-.pagination-item-current a,
-.pagination-item a,
-.pagination-prev a,
-.pagination-next a {
-  display: block;
+
+.pagination-list a,
+.pagination-current {
   width: 25px;
   height: 25px;
-  display: blok;
-  text-align: center;
-  vertical-align: center; /*почему не выравнивает по центру*/
   font-weight: 500;
   line-height: 18px;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -1925,17 +2033,29 @@ opacity: 0.8;
 }
 
 
-.pagination-item-current a,
 .pagination-list a:active {
   color: #323232;
   background-color: #fff;
 }
 
-pagination-prev a,
-pagination-next a {
-  width: 8px;
-  background: url("../img/icon-right-small.svg") no-repeat center;/*почему не вставляет свг*/
+
+.pagination-prev a {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url("../img/icon-right-small.svg") no-repeat center;
+  background-size: 8px 12px;
+  transform: scale(-1);
   opacity: 0.4;
+}
+
+.pagination-next a {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url("../img/icon-right-small.svg") no-repeat center;
+  background-size: 8px 12px;
+  opacity: 1;
 }
 
 /*мэйн*/
@@ -2063,126 +2183,6 @@ pagination-next a {
 
 
 /*сетки начало потом перенесу по соответствующим разделам*/
-
-
-.nice-form [type="checkbox"],
-.nice-form [type="radio"]{
-    position:fixed;
-    left:0;
-    top:0;
-    opacity:0;
-    z-index: -1;
-}
-
-.nice-form .fake-input{
-    display: inline-block;
-    width:16px;
-    height:16px;
-    border:1px solid #bbb;
-    background:#f8f8f8;
-    vertical-align: middle;
-    position: relative;
-    margin-right: 5px;
-}
-.nice-form [type=radio] + .fake-input{border-radius:100%;}
-
-.nice-form [type="checkbox"] + .fake-input:before{
-    content:'';
-    width:8px;
-    height:4px;
-    position:absolute;
-    top:50%;
-    left:50%;
-    border:3px solid #777;
-    border-width:0 0 3px 3px;
-    opacity: 0;
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    margin:-4px 0 0 -5px;
-}
-
-.nice-form [type="radio"] + .fake-input:before{
-    content:'';
-    position: absolute;
-    top: 3px;
-    right: 3px;
-    bottom: 3px;
-    left: 3px;
-    background: #777;
-    border-radius:100%;
-    opacity: 0;
-}
-
-.nice-form [type="radio"]:checked + .fake-input:before,
-.nice-form [type="checkbox"]:checked + .fake-input:before{opacity:1;}
-
-.nice-form [type="radio"]:checked ~ .fake-label,
-.nice-form [type="checkbox"]:checked ~ .fake-label {font-weight:bold; color:#f00}
-
-.nice-form input:disabled + .fake-input,
-.nice-form input:disabled ~ .fake-label{opacity: .5;}
-
-
-
-
-.nice-form .fake-select{
-    position:relative;
-    display:inline-block;
-}
-.nice-form select::-ms-expand {display: none;}
-.nice-form select{
-    display:inline-block;
-    border:2px solid #bbb;
-    padding:4px 3px 4px 5px;
-    margin:0;
-    font:inherit;
-    outline:none;
-    line-height:1.2;
-    background:#f8f8f8;
-    -webkit-appearance:none;
-    -webkit-border-radius:6px;
-    -moz-border-radius:6px;
-    appearance:none;
-    border-radius:6px;
-    width:250px;
-    position: relative;
-}
-.nice-form .fake-select:before{
-    content:"";
-    position:absolute;
-    top:0;
-    right:0;
-    bottom:0;
-    width: 35px;
-    background:#bbb;
-    pointer-events:none;
-    border-radius:0 6px 6px 0;
-    z-index: 1;
-}
-.nice-form .fake-select:after{
-    position: absolute;
-    right:12px;
-    content:'';
-    width:8px;
-    height:8px;
-    position:absolute;
-    top:50%;
-    border:3px solid #666;
-    border-width:0 0 3px 3px;
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    margin-top:-6px;
-    line-height: 0;
-    z-index: 1;
-}
-
-
-
-
 
 
 
