@@ -142,9 +142,6 @@ img {
   padding: 7px 14px 7px 14px;
   text-decoration: underline;
   text-decoration-color: rgba(255,255,255,0.2);
-  /*border-bottom: 1px solid;
-  border-bottom-color: rgba(255,255,255,0.2);
-  /*но подчеркивание соответственно получается очень далеко от слов , раньше падинг был в ховере и прыгали слова*/
 }
 
 
@@ -168,7 +165,6 @@ img {
 .entrance,
 .basket a {
  background-color: rgba(255,255,255,0.2);
- outline: none;
 }
 
 
@@ -400,14 +396,15 @@ a.entrance {
 
 
 .login:hover .entrance,
-.login:focus .entrance {
+.entrance:focus .login { /*НИКАК НЕ МОГУ ОКРАСИТЬ В БЕЛЫЙ ВХОД ПРИ ФОКУСЕ*/
   background-color: #f8f7f4;
   color: #323232;
   border-radius: 16px;
 }
 
 
-.login:hover .entrance-span {
+.login:hover .entrance-span,
+.entrance:focus .entrance-span {
   color: #323232;
 }
 
@@ -440,7 +437,8 @@ a.entrance .icon {
 }
 
 
-.login:hover .icon {
+.login:hover .icon,
+.entrance:focus .icon {
   fill: #000;
 }
 
@@ -499,6 +497,12 @@ a.entrance .icon {
   border-width: 2px;
   border-color: #d3d3d2;
   height: 44px;
+}
+
+.user input[type="text"]::placeholder,
+.user input[type="password"]::placeholder {
+  font-weight: 400;
+  color: #323232; /*цвет не меняется а нужен другой*/
 }
 
 
@@ -580,6 +584,7 @@ a.entrance .icon {
 .search-button:focus {
   background-color: #f8f7f4;
   color: #323232;
+  outline: none;
 }
 
 
@@ -589,7 +594,7 @@ a.entrance .icon {
 
 
 .user-search-box:hover .icon-loupe,
-.user-search-box:focus .icon-loupe {
+.search-button:focus .icon-loupe {
   fill: #000;
 }
 
@@ -727,13 +732,15 @@ a.entrance .icon {
 
 
 .basket.active .bg-icon-basket-red,
-.basket:hover .bg-icon-basket-red {
+.basket:hover .bg-icon-basket-red,
+.basket:focus .bg-icon-basket-red {
   fill:#e84d37;
 }
 
 
 .basket.active .icon-basket-red,
-.basket:hover .icon-basket-red {
+.basket:hover .icon-basket-red,
+.basket:focus .icon-basket-red {
   fill:#343434;
 }
 
@@ -743,7 +750,8 @@ a.entrance .icon {
 }
 
 
-.basket a:hover {
+.basket a:hover,
+.basket a:focus {
   background-color: #f8f7f4;
   color: #323232;
 }
@@ -1297,6 +1305,7 @@ a.entrance .icon {
 
 .products-line-list h3 {
   margin-top: 4px;
+  padding: 0 5px;
 }
 
 
@@ -1654,7 +1663,13 @@ h1 {
   background-image: url(../img/select-arrow.svg);
   background-repeat: no-repeat;
   background-position: center right 2px;
-  background-size: 20px;
+  background-size: 13px 15px; /* наобум в макете 10 на 11  не задано наведение и не перекрывает значек обычный селекта*/
+}
+
+
+.sort-select:hover,
+.sort-select:focus {
+  color: #323232;
 }
 
 
@@ -1748,6 +1763,7 @@ margin:  0 13px 0 0;
   background-size: 22px 22px;
   background-repeat: no-repeat;
   opacity: 0.8;
+   cursor: pointer;
 }
 
 
@@ -1833,6 +1849,7 @@ input[type="radio"]:disable+.radio-mark{
   background-size: 20px 20px;
   background-repeat: no-repeat;
   opacity: 0.8;
+  cursor: pointer;
 }
 
 
@@ -1999,10 +2016,11 @@ filler:hover+.checkbox-mark {
   margin: 0 0 19px 0;
 }
 
+
 .pagination-prev,
 .pagination-item-current,
 .pagination-item {
-  margin-right: 5px;
+  margin-right: 3px;
 }
 
 
@@ -2178,11 +2196,6 @@ filler:hover+.checkbox-mark {
 
 
 
-
-
-
-
-/*сетки начало потом перенесу по соответствующим разделам*/
 
 
 
